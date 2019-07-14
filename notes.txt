@@ -1,0 +1,31 @@
+ICONS...
+Right Arrow:
+<i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+Plus Sign:
+<i class="fa fa-plus" aria-hidden="true"></i>
+Twitter:
+<i class="fa fa-twitter" aria-hidden="true"></i>
+Facebook:
+<i class="fa fa-facebook" aria-hidden="true"></i>
+Instagram:
+<i class="fa fa-instagram" aria-hidden="true"></i>
+Paw:
+<i class="fa fa-paw" aria-hidden="true"></i>
+
+FONTS...
+Text Font:font-family: 'Nunito', sans-serif;
+Sub-Heading Text: font-family: 'Lobster', cursive;
+Logo Text: font-family: 'Cookie', cursive;
+Heading Text: font-family: 'DM Serif Display', serif;
+
+COLOR...
+Text Color: color: #2d4059
+Action Color: color: #ff5722
+bg-pet: #f6fafd
+bg-food1: #F7D797
+bg-food2: #91D0D8
+bg-food3: #9B99DB
+
+COMMENTS...
+<!-- Start of -->
+<!-- End of -->

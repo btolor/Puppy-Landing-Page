@@ -5,7 +5,7 @@ $sub-header: 'Syncopate', sans-serif
 //Color Variables...
 $text-color: #2d4059
 $action: #ff5722
-$bg-pet: #f6fafd
+$bg-pet: #f0f5f9
 $bg-food1: #F7D797
 $bg-food2: #91D0D8
 $bg-food3: #9B99DB
@@ -35,7 +35,7 @@ body
     background-color: white
     //top-section
     .top-section
-        background-color:#f0f5f9
+        background-color: $bg-pet
         .container
             display: flex
             flex-direction: row
@@ -57,9 +57,21 @@ body
                         top: -23vh
                         right: -50%
                     #header
-                        +text($text,$text-color,3.2vw,300) 
-                        margin-top: -36%
+                        +text($text,$text-color,3vw,300) 
+                        margin-top: -32%
                     #sub-header
-                        padding: 10% 0 4%
+                        padding: 8% 0 4%
                         +text($text,$text-color,1.5vw,500)
                         text-transform: uppercase
+                    .container
+                        input   
+                            padding: 3% 0 3% 1.5%
+                            width: 65%
+                            +text($text,$text-color,.8vw,300)
+                        #subscribe
+                            +text($text,white,1vw,400)
+                            text-decoration: none
+                            background-color: $action
+                            padding: 2.8% 2.8% 3.5% 
+                            margin-left: -1%
+                            text-transform: uppercase

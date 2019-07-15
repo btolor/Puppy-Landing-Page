@@ -33,16 +33,35 @@ body .top-section .container .right .container img {
 body .top-section .container .right .container #header {
   font-family: "Roboto", sans-serif;
   color: #2d4059;
-  font-size: 3.2vw;
+  font-size: 3vw;
   font-weight: 300;
-  margin-top: -36%;
+  margin-top: -32%;
 }
 body .top-section .container .right .container #sub-header {
-  padding: 10% 0 4%;
+  padding: 8% 0 4%;
   font-family: "Roboto", sans-serif;
   color: #2d4059;
   font-size: 1.5vw;
   font-weight: 500;
+  text-transform: uppercase;
+}
+body .top-section .container .right .container .container input {
+  padding: 3% 0 3% 1.5%;
+  width: 65%;
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 0.8vw;
+  font-weight: 300;
+}
+body .top-section .container .right .container .container #subscribe {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 1vw;
+  font-weight: 400;
+  text-decoration: none;
+  background-color: #ff5722;
+  padding: 2.8% 2.8% 3.5%;
+  margin-left: -1%;
   text-transform: uppercase;
 }
 

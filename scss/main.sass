@@ -1,6 +1,6 @@
 //Font Variables...
-$sub-header: 'Roboto', sans-serif
-$text: 'Syncopate', sans-serif
+$text: 'Roboto', sans-serif
+$sub-header: 'Syncopate', sans-serif
 
 //Color Variables...
 $text-color: #2d4059
@@ -11,6 +11,8 @@ $bg-food2: #91D0D8
 $bg-food3: #9B99DB
 
 //Background-Image Variables...
+$puppyA: '../images/puppy1.jpg'
+$puppyB: '../images/puppy2.jpg'
 
 //MIXINS...
 // Media Queries Mixin...
@@ -22,4 +24,42 @@ $bg-food3: #9B99DB
     width: $width
     margin: $margin
 
+=text($text,$color,$size,$weight)
+    font-family: $text
+    color: $color
+    font-size: $size
+    font-weight: $weight
+
 //Puppy Landing Page Styles...
+body
+    background-color: white
+    //top-section
+    .top-section
+        background-color:#f0f5f9
+        .container
+            display: flex
+            flex-direction: row
+            .left
+                max-width: 60%
+                background-image: url($puppyA)
+                background-size: 100% 100%
+                img 
+                    width: 100%
+                    height: 100%
+            .right
+                max-width: 40%
+                padding: 8% 10% 0 0
+                .container
+                    display: inline
+                    img 
+                        width: 60%
+                        position: relative
+                        top: -23vh
+                        right: -50%
+                    #header
+                        +text($text,$text-color,3.2vw,300) 
+                        margin-top: -36%
+                    #sub-header
+                        padding: 10% 0 4%
+                        +text($text,$text-color,1.5vw,500)
+                        text-transform: uppercase

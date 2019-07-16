@@ -12,7 +12,7 @@ body .top-section .container {
 }
 body .top-section .container .left {
   max-width: 55%;
-  background-image: url("../images/puppy1.jpg");
+  background-image: url("../images/puppy1.png");
   background-size: 100% 100%;
 }
 body .top-section .container .left img {
@@ -213,13 +213,45 @@ body .mid-section .mid {
   display: flex;
   flex-direction: row;
   background-color: #f0f5f9;
+  margin-top: 0.5%;
 }
 body .mid-section .mid .left {
-  max-width: 30%;
+  max-width: 40%;
+}
+body .mid-section .mid .left .logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15% 0 6%;
+}
+body .mid-section .mid .left .logos #petlife {
+  width: 20%;
+}
+body .mid-section .mid .left .logos i {
+  padding: 10%;
+}
+body .mid-section .mid .left .logos #puppy {
+  width: 25%;
+}
+body .mid-section .mid .left .content {
+  padding: 0 4% 0 18%;
+}
+body .mid-section .mid .left .content #header {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 3vw;
+  font-weight: 300;
+}
+body .mid-section .mid .left .content #info {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1.2vw;
+  font-weight: 300;
+  padding: 6% 0 20%;
 }
 body .mid-section .mid .right {
-  max-width: 70%;
-  background-image: url("../images/puppy2.jpg");
+  max-width: 60%;
+  background-image: url("../images/puppy2.png");
   background-size: 100% 100%;
 }
 body .mid-section .mid .right img {

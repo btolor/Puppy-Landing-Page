@@ -12,8 +12,8 @@ $bg-food2: #91D0D8
 $bg-food3: #9B99DB
 
 //Background-Image Variables...
-$puppyA: '../images/puppy1.jpg'
-$puppyB: '../images/puppy2.jpg'
+$puppyA: '../images/puppy1.png'
+$puppyB: '../images/puppy2.png'
 $paw-print1: '../images/food-bg1.png'
 $paw-print2: '../images/paw-bg.png'
 $dry-food: '../images/food-bg2.png'
@@ -185,10 +185,29 @@ body
             display: flex
             flex-direction: row
             background-color: $bg-pet
+            margin-top: .5%
             .left
-                max-width: 30%
+                max-width: 40%
+                .logos
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    padding: 15% 0 6%
+                    #petlife
+                        width: 20%
+                    i
+                        padding: 10%
+                    #puppy
+                        width: 25%
+                .content
+                    padding: 0 4% 0 18%
+                    #header
+                        +text($text,$text-color,3vw,300) 
+                    #info
+                        +text($text,$text-color,1.2vw,300)
+                        padding: 6% 0 20%
             .right
-                max-width: 70%
+                max-width: 60%
                 background-image: url($puppyB)
                 background-size: 100% 100%
                 img

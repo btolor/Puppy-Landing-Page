@@ -5,6 +5,7 @@ $sub-header: 'Syncopate', sans-serif
 //Color Variables...
 $text-color: #2d4059
 $action: #ff5722
+$hovered: #e63600
 $bg-pet: #f0f5f9
 $bg-food1: #F7D797
 $bg-food2: #91D0D8
@@ -13,6 +14,9 @@ $bg-food3: #9B99DB
 //Background-Image Variables...
 $puppyA: '../images/puppy1.jpg'
 $puppyB: '../images/puppy2.jpg'
+$paw-print1: '../images/food-bg1.png'
+$paw-print2: '../images/paw-bg.png'
+$dry-food: '../images/food-bg2.png'
 
 //MIXINS...
 // Media Queries Mixin...
@@ -36,42 +40,158 @@ body
     //top-section
     .top-section
         background-color: $bg-pet
+        +center(100%, 0 auto)
         .container
             display: flex
             flex-direction: row
             .left
-                max-width: 60%
+                max-width: 55%
                 background-image: url($puppyA)
                 background-size: 100% 100%
                 img 
                     width: 100%
                     height: 100%
             .right
-                max-width: 40%
-                padding: 8% 10% 0 0
+                width: 45%
+                padding: 8% 8% 12% 0
                 .container
                     display: inline
                     img 
-                        width: 60%
+                        width: 40%
                         position: relative
-                        top: -23vh
-                        right: -50%
+                        top: -10vh
+                        right: -52%
+                        border-radius: 10px
                     #header
                         +text($text,$text-color,3vw,300) 
-                        margin-top: -32%
                     #sub-header
-                        padding: 8% 0 4%
+                        padding-top: 8% 
                         +text($text,$text-color,1.5vw,500)
                         text-transform: uppercase
-                    .container
+                    #input-sec
+                        padding: 5% 0
                         input   
                             padding: 3% 0 3% 1.5%
-                            width: 65%
-                            +text($text,$text-color,.8vw,300)
+                            width: 50%
+                            +text($text,$text-color,1vw,300)
+                            -webkit-border-top-left-radius: 10px
+                            -webkit-border-bottom-left-radius: 10px
+                            -moz-border-radius-topleft: 10px
+                            -moz-border-radius-bottomleft: 10px
+                            border-top-left-radius: 10px
+                            border-bottom-left-radius: 10px
+                            webkit-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                         #subscribe
-                            +text($text,white,1vw,400)
+                            +text($text,white,1vw,600)
                             text-decoration: none
                             background-color: $action
-                            padding: 2.8% 2.8% 3.5% 
-                            margin-left: -1%
+                            padding: 3.5% 2.8% 3.5% 
+                            margin-left: -1.5%
                             text-transform: uppercase
+                            -webkit-border-top-right-radius: 10px
+                            -webkit-border-bottom-right-radius: 10px
+                            -moz-border-radius-topright: 10px
+                            -moz-border-radius-bottomright: 10px
+                            border-top-right-radius: 10px
+                            border-bottom-right-radius: 10px
+                            webkit-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            transition: 0.2s ease-in-out
+                            &:hover
+                                background-color: $hovered 
+                    #promo
+                        +text($text,$text-color,.9vw,400)    
+    .mid-section
+        +center(100%, 0 auto)
+        margin-top: .5%
+        .top
+            display: flex
+            flex-direction: row
+            .info
+                max-width: 25%
+                text-align: center
+                background-color: $bg-pet
+                padding: 6% 1%
+                #info
+                    +text($text,$text-color,1.2vw,300) 
+                #sub-header
+                    +text($text,$text-color,1.7vw,700)
+                    text-transform: uppercase 
+                    padding: 6% 0 5%
+                #info2
+                    +text($text,$text-color,1vw,300)
+                    +center(60%, 0 auto)
+                #info3
+                    +text($text,$text-color,1vw,700)
+                    text-transform: uppercase 
+                    padding: 10% 0
+                #btn
+                    text-decoration: none
+                    color: $text-color
+                    background-color: white
+                    padding: 2.5% 6% 
+                    border-radius: 20px
+                    transition: 0.2s ease-in-out
+                    webkit-box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
+                    -moz-box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
+                    box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
+                    &:hover
+                        color: $action
+                        border: .5px outset $action
+            .p1
+                max-width: 25%
+                background-image: url($paw-print1)
+                background-size: 100% 100%
+                .texture
+                    background-color: $bg-food1
+                    opacity: .9
+                    height: 100%
+                    #container
+                        text-align: center
+                        padding-top: 8% 
+                        img
+                            width: 90%
+            .p2
+                max-width: 25%
+                background-image: url($dry-food)
+                background-size: 100% 100%
+                .texture
+                    background-color: $bg-food2
+                    opacity: .9
+                    height: 100%
+                    #container
+                        text-align: center
+                        img
+                            width: 80%
+                            padding: 22% 6%
+            .p3
+                max-width: 25%
+                background-image: url($paw-print2)
+                background-size: 100% 100%
+                .texture
+                    background-color: $bg-food3
+                    opacity: .9
+                    height: 100%
+                    #container
+                        text-align: center
+                        padding-top: 8%
+                        img
+                            width: 76%
+                            padding: 0 6%
+        .mid
+            display: flex
+            flex-direction: row
+            background-color: $bg-pet
+            .left
+                max-width: 30%
+            .right
+                max-width: 70%
+                background-image: url($puppyB)
+                background-size: 100% 100%
+                img
+                    width: 100%
+                    height: 100%
+

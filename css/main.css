@@ -334,6 +334,7 @@ body .mid-section .bottom .right .right-bg #info {
 }
 body footer {
   text-align: center;
+  padding-top: 8%;
 }
 body footer #opening {
   font-family: "Roboto", sans-serif;
@@ -350,15 +351,12 @@ body footer #off {
   text-transform: uppercase;
   padding: 2% 0;
 }
-body footer #input-sec {
-  padding: 5% 0;
-}
 body footer #input-sec input {
-  padding: 3% 0 3% 1.5%;
-  width: 50%;
+  padding: 0.8% 0 0.8% 0.5%;
+  width: 20%;
   font-family: "Roboto", sans-serif;
   color: #2d4059;
-  font-size: 1vw;
+  font-size: 1.4vw;
   font-weight: 300;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -370,12 +368,12 @@ body footer #input-sec input {
 body footer #input-sec #subscribe {
   font-family: "Roboto", sans-serif;
   color: white;
-  font-size: 1vw;
+  font-size: 1.2vw;
   font-weight: 600;
   text-decoration: none;
   background-color: #ff5722;
-  padding: 3.5% 2.8% 3.5%;
-  margin-left: -1.5%;
+  padding: 1.13% 1.5% 1.05%;
+  margin-left: -0.3%;
   text-transform: uppercase;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -387,6 +385,61 @@ body footer #input-sec #subscribe {
 }
 body footer #input-sec #subscribe:hover {
   background-color: #e63600;
+}
+body footer #promo {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 0.9vw;
+  font-weight: 400;
+  padding: 2% 0;
+}
+body footer #foot {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2.5%;
+}
+body footer #foot .left {
+  width: 40%;
+  padding-top: 5%;
+}
+body footer #foot .left #copy-rights {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1vw;
+  font-weight: 400;
+  text-align: left;
+}
+body footer #foot .left #copy-rights a {
+  color: #2d4059;
+  margin: 0 2%;
+}
+body footer #foot .mid {
+  width: 20%;
+}
+body footer #foot .mid img {
+  width: 50%;
+}
+body footer #foot .right {
+  width: 40%;
+  text-align: right;
+  padding-top: 5%;
+}
+body footer #foot .right a {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1vw;
+  font-weight: 400;
+}
+body footer #foot .right #icon {
+  margin: 0 5%;
+  font-size: 1.4vw;
+}
+body footer #foot .right #iconL {
+  margin-left: 5%;
+  font-size: 1.4vw;
 }
 
 /*# sourceMappingURL=main.css.map */

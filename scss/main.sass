@@ -265,6 +265,7 @@ body
                         padding-bottom: 16%
     footer
         text-align: center
+        padding-top: 8%
         #opening
             +text($text,black,2.6vw,700)
             text-transform: uppercase
@@ -273,11 +274,10 @@ body
             text-transform: uppercase
             padding: 2% 0
         #input-sec
-            padding: 5% 0
             input   
-                padding: 3% 0 3% 1.5%
-                width: 50%
-                +text($text,$text-color,1vw,300)
+                padding: .8% 0 .8% .5%
+                width: 20%
+                +text($text,$text-color,1.4vw,300)
                 -webkit-border-top-left-radius: 10px
                 -webkit-border-bottom-left-radius: 10px
                 -moz-border-radius-topleft: 10px
@@ -285,11 +285,11 @@ body
                 border-top-left-radius: 10px
                 border-bottom-left-radius: 10px
             #subscribe
-                +text($text,white,1vw,600)
+                +text($text,white,1.2vw,600)
                 text-decoration: none
                 background-color: $action
-                padding: 3.5% 2.8% 3.5% 
-                margin-left: -1.5%
+                padding: 1.13% 1.5% 1.05% 
+                margin-left: -.3%
                 text-transform: uppercase
                 -webkit-border-top-right-radius: 10px
                 -webkit-border-bottom-right-radius: 10px
@@ -300,3 +300,38 @@ body
                 transition: 0.2s ease-in-out
                 &:hover
                     background-color: $hovered 
+        #promo
+            +text($text,$text-color,.9vw,400)
+            padding: 2% 0
+        #foot
+            +center(90%, 0 auto)
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            padding-top: 2.5%
+            .left
+                width: 40%
+                padding-top: 5%
+                #copy-rights
+                    +text($text,$text-color,1vw,400)
+                    text-align: left
+                    a
+                        color: $text-color
+                        margin: 0 2%
+            .mid
+                width: 20%
+                //margin-right: 13%
+                img
+                    width: 50%
+            .right
+                width: 40%
+                text-align: right
+                padding-top: 5%
+                a
+                    +text($text,$text-color, 1vw,400)
+                #icon
+                    margin: 0 5%
+                    font-size: 1.4vw
+                #iconL
+                    margin-left: 5%
+                    font-size: 1.4vw

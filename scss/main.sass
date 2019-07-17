@@ -17,6 +17,7 @@ $puppyB: '../images/puppy2.png'
 $paw-print1: '../images/food-bg1.png'
 $paw-print2: '../images/paw-bg.png'
 $dry-food: '../images/food-bg2.png'
+$face-bg: '../images/face-bg.png'
 
 //MIXINS...
 // Media Queries Mixin...
@@ -33,6 +34,8 @@ $dry-food: '../images/food-bg2.png'
     color: $color
     font-size: $size
     font-weight: $weight
+
+
 
 //Puppy Landing Page Styles...
 body
@@ -213,4 +216,87 @@ body
                 img
                     width: 100%
                     height: 100%
-
+        .bottom
+            display: flex
+            flex-direction: row
+            width: 100%
+            margin-top: 0.5%
+            .left
+                width: 50%
+                margin-right: 0.25%
+                background-image: url($face-bg)
+                background-size: 100% 100%
+                .left-bg
+                    background-color: rgba(240, 245, 249, .9)
+                    #info
+                        +text($text,$text-color,1.5vw,400)
+                        +center(60%, 0 auto)
+                        padding-top: 20%
+                    .title-sec
+                        display: flex
+                        flex-direction: row
+                        img
+                            width: 30%
+                        #for
+                            +text($sub-header,$action,1.5vw,700)
+                            text-transform: uppercase
+                            padding: 14% 0 0 5%
+            .right 
+                width: 50%
+                margin-left: 0.25%
+                background-color: $bg-pet
+                background-image: url($face-bg)
+                background-size: 100% 100%
+                .right-bg
+                    background-color: rgba(240, 245, 249, .9)
+                    .title-sec
+                        display: flex
+                        flex-direction: row-reverse
+                        img
+                            width: 30%
+                        #for
+                            +text($sub-header,$bg-food2,1.5vw,700)
+                            text-transform: uppercase
+                            padding-top: 14% 
+                            margin-right: 30%
+                    #info
+                        +text($text,$text-color,1.5vw,400)
+                        +center(60%, 0 auto)
+                        padding-bottom: 16%
+    footer
+        text-align: center
+        #opening
+            +text($text,black,2.6vw,700)
+            text-transform: uppercase
+        #off
+            +text($text,$text-color,1.2vw,500)
+            text-transform: uppercase
+            padding: 2% 0
+        #input-sec
+            padding: 5% 0
+            input   
+                padding: 3% 0 3% 1.5%
+                width: 50%
+                +text($text,$text-color,1vw,300)
+                -webkit-border-top-left-radius: 10px
+                -webkit-border-bottom-left-radius: 10px
+                -moz-border-radius-topleft: 10px
+                -moz-border-radius-bottomleft: 10px
+                border-top-left-radius: 10px
+                border-bottom-left-radius: 10px
+            #subscribe
+                +text($text,white,1vw,600)
+                text-decoration: none
+                background-color: $action
+                padding: 3.5% 2.8% 3.5% 
+                margin-left: -1.5%
+                text-transform: uppercase
+                -webkit-border-top-right-radius: 10px
+                -webkit-border-bottom-right-radius: 10px
+                -moz-border-radius-topright: 10px
+                -moz-border-radius-bottomright: 10px
+                border-top-right-radius: 10px
+                border-bottom-right-radius: 10px
+                transition: 0.2s ease-in-out
+                &:hover
+                    background-color: $hovered 

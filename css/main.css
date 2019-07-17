@@ -258,5 +258,135 @@ body .mid-section .mid .right img {
   width: 100%;
   height: 100%;
 }
+body .mid-section .bottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 0.5%;
+}
+body .mid-section .bottom .left {
+  width: 50%;
+  margin-right: 0.25%;
+  background-image: url("../images/face-bg.png");
+  background-size: 100% 100%;
+}
+body .mid-section .bottom .left .left-bg {
+  background-color: rgba(240, 245, 249, 0.9);
+}
+body .mid-section .bottom .left .left-bg #info {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1.5vw;
+  font-weight: 400;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 20%;
+}
+body .mid-section .bottom .left .left-bg .title-sec {
+  display: flex;
+  flex-direction: row;
+}
+body .mid-section .bottom .left .left-bg .title-sec img {
+  width: 30%;
+}
+body .mid-section .bottom .left .left-bg .title-sec #for {
+  font-family: "Syncopate", sans-serif;
+  color: #ff5722;
+  font-size: 1.5vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 14% 0 0 5%;
+}
+body .mid-section .bottom .right {
+  width: 50%;
+  margin-left: 0.25%;
+  background-color: #f0f5f9;
+  background-image: url("../images/face-bg.png");
+  background-size: 100% 100%;
+}
+body .mid-section .bottom .right .right-bg {
+  background-color: rgba(240, 245, 249, 0.9);
+}
+body .mid-section .bottom .right .right-bg .title-sec {
+  display: flex;
+  flex-direction: row-reverse;
+}
+body .mid-section .bottom .right .right-bg .title-sec img {
+  width: 30%;
+}
+body .mid-section .bottom .right .right-bg .title-sec #for {
+  font-family: "Syncopate", sans-serif;
+  color: #91D0D8;
+  font-size: 1.5vw;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-top: 14%;
+  margin-right: 30%;
+}
+body .mid-section .bottom .right .right-bg #info {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1.5vw;
+  font-weight: 400;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 16%;
+}
+body footer {
+  text-align: center;
+}
+body footer #opening {
+  font-family: "Roboto", sans-serif;
+  color: black;
+  font-size: 2.6vw;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+body footer #off {
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1.2vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 2% 0;
+}
+body footer #input-sec {
+  padding: 5% 0;
+}
+body footer #input-sec input {
+  padding: 3% 0 3% 1.5%;
+  width: 50%;
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1vw;
+  font-weight: 300;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-topleft: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+body footer #input-sec #subscribe {
+  font-family: "Roboto", sans-serif;
+  color: white;
+  font-size: 1vw;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: #ff5722;
+  padding: 3.5% 2.8% 3.5%;
+  margin-left: -1.5%;
+  text-transform: uppercase;
+  -webkit-border-top-right-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-bottomright: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 0.2s ease-in-out;
+}
+body footer #input-sec #subscribe:hover {
+  background-color: #e63600;
+}
 
 /*# sourceMappingURL=main.css.map */

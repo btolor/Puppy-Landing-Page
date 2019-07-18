@@ -12,7 +12,7 @@ $bg-food2: #91D0D8
 $bg-food3: #9B99DB
 
 //Background-Image Variables...
-$puppyA: '../images/puppy1.png'
+$confetti: '../images/confettiB.png'
 $puppyB: '../images/puppy2.png'
 $paw-print1: '../images/food-bg1.png'
 $paw-print2: '../images/paw-bg.png'
@@ -43,38 +43,70 @@ body
     //top-section
     .top-section
         background-color: $bg-pet
+        +media(600px)
+            background: green
         +center(100%, 0 auto)
         .container
             display: flex
             flex-direction: row
+            +media(600px)
+                flex-direction: column-reverse          
             .left
-                max-width: 55%
-                background-image: url($puppyA)
-                background-size: 100% 100%
-                img 
+                width: 55%
+                +media(600px)
                     width: 100%
-                    height: 100%
+                    position: absolute
+                .img-bg
+                    background-image: url($confetti)
+                    background-size: 100% 100%
+                    .img-sec
+                        text-align: center
+                        padding-top: 30%
+                        +media(600px)
+                            text-align: center
+                        img 
+                            width: 80%
+                            +media(600px)
+                                width: 45%
+                                position: relative
             .right
                 width: 45%
-                padding: 8% 8% 12% 0
+                padding: 8% 8% 4% 4%
+                +media(600px)
+                    width: 100%
+                    padding: 0
                 .container
                     display: inline
                     img 
-                        width: 40%
+                        width: 20%
                         position: relative
                         top: -10vh
-                        right: -52%
+                        right: -70%
                         border-radius: 10px
+                        +media(768px)
+                            width: 25%
+                            top: -6vh
+                        +media(600px)
+                            width: 10%
+                            top: 10vh
+                            right: -82%
                     #header
-                        +text($text,$text-color,3vw,300) 
+                        +text($text,$text-color,2.5vw,300) 
+                        width: 75%
+                        +media(768px)
+                            font-size: 3vw
+                            width: 80%
+                        +media(600px)
+                            margin: 0 auto
+                            text-align: center
                     #sub-header
-                        padding-top: 8% 
+                        padding-top: 6% 
                         +text($text,$text-color,1.5vw,500)
                         text-transform: uppercase
                     #input-sec
                         padding: 5% 0
                         input   
-                            padding: 3% 0 3% 1.5%
+                            padding: 2.5% 0 2.5% 1.5%
                             width: 50%
                             +text($text,$text-color,1vw,300)
                             -webkit-border-top-left-radius: 10px
@@ -86,11 +118,13 @@ body
                             webkit-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            +media(768px)
+                                font-size: 1.4vw
                         #subscribe
                             +text($text,white,1vw,600)
                             text-decoration: none
                             background-color: $action
-                            padding: 3.5% 2.8% 3.5% 
+                            padding: 2.8% 2.8% 3% 
                             margin-left: -1.5%
                             text-transform: uppercase
                             -webkit-border-top-right-radius: 10px
@@ -103,6 +137,12 @@ body
                             -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             transition: 0.2s ease-in-out
+                            +media(1024px)
+                                padding: 3% 2.8% 3% 
+                            +media(768px)
+                                padding: 2.8% 2.8% 3.2% 
+                                font-size: 1.5vw
+                                margin-left: -2%
                             &:hover
                                 background-color: $hovered 
                     #promo
@@ -113,24 +153,33 @@ body
         .top
             display: flex
             flex-direction: row
+            +center(100%, 0 auto)
             .info
-                max-width: 25%
+                width: 25%
                 text-align: center
                 background-color: $bg-pet
                 padding: 6% 1%
                 #info
                     +text($text,$text-color,1.2vw,300) 
+                    +media(768px)
+                        font-size: 1.4vw
                 #sub-header
                     +text($text,$text-color,1.7vw,700)
                     text-transform: uppercase 
                     padding: 6% 0 5%
+                    +media(768px)
+                        font-size: 1.8vw
                 #info2
                     +text($text,$text-color,1vw,300)
                     +center(60%, 0 auto)
+                    +media(768px)
+                        font-size: 1.2vw
                 #info3
                     +text($text,$text-color,1vw,700)
                     text-transform: uppercase 
                     padding: 10% 0
+                    +media(768px)
+                        font-size: 1.3vw
                 #btn
                     text-decoration: none
                     color: $text-color
@@ -145,7 +194,7 @@ body
                         color: $action
                         border: .5px outset $action
             .p1
-                max-width: 25%
+                width: 25%
                 background-image: url($paw-print1)
                 background-size: 100% 100%
                 .texture
@@ -155,10 +204,12 @@ body
                     #container
                         text-align: center
                         padding-top: 8% 
+                        +media(768px)
+                            padding-top: 15%
                         img
                             width: 90%
             .p2
-                max-width: 25%
+                width: 25%
                 background-image: url($dry-food)
                 background-size: 100% 100%
                 .texture
@@ -170,8 +221,10 @@ body
                         img
                             width: 80%
                             padding: 22% 6%
+                            +media(768px)
+                                padding: 25% 6%
             .p3
-                max-width: 25%
+                width: 25%
                 background-image: url($paw-print2)
                 background-size: 100% 100%
                 .texture
@@ -181,6 +234,8 @@ body
                     #container
                         text-align: center
                         padding-top: 8%
+                        +media(768px)
+                            padding-top: 12%
                         img
                             width: 76%
                             padding: 0 6%
@@ -196,6 +251,8 @@ body
                     flex-direction: row
                     justify-content: center
                     padding: 15% 0 6%
+                    +media(768px)
+                        padding-left: 6%
                     #petlife
                         width: 20%
                     i
@@ -209,13 +266,18 @@ body
                     #info
                         +text($text,$text-color,1.2vw,300)
                         padding: 6% 0 20%
+                        line-height: 1.5
+                        +media(768px)
+                            font-size: 1.4vw
             .right
                 max-width: 60%
-                background-image: url($puppyB)
+                background-image: url($confetti)
                 background-size: 100% 100%
+                text-align: center
                 img
-                    width: 100%
-                    height: 100%
+                    width: 90%
+                    height: 70%
+                    margin-top: 20%
         .bottom
             display: flex
             flex-direction: row
@@ -232,6 +294,7 @@ body
                         +text($text,$text-color,1.5vw,400)
                         +center(60%, 0 auto)
                         padding-top: 20%
+                        line-height: 1.5
                     .title-sec
                         display: flex
                         flex-direction: row
@@ -263,6 +326,7 @@ body
                         +text($text,$text-color,1.5vw,400)
                         +center(60%, 0 auto)
                         padding-bottom: 16%
+                        line-height: 1.5
     footer
         text-align: center
         padding-top: 8%
@@ -298,6 +362,8 @@ body
                 border-top-right-radius: 10px
                 border-bottom-right-radius: 10px
                 transition: 0.2s ease-in-out
+                +media(768px)
+                    margin-left: -.6%
                 &:hover
                     background-color: $hovered 
         #promo

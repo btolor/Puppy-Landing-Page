@@ -43,8 +43,6 @@ body
     //top-section
     .top-section
         background-color: $bg-pet
-        +media(600px)
-            background: green
         +center(100%, 0 auto)
         .container
             display: flex
@@ -92,7 +90,7 @@ body
                             width: 15%
                             top: 7vh
                             right: -75%
-                    #header
+                    #header-1
                         +text($text,$text-color,2.5vw,300) 
                         width: 75%
                         +media(768px)
@@ -104,7 +102,7 @@ body
                             padding-top: 53%
                             font-size: 5vw
                             width: 60%
-                    #sub-header
+                    #top-sub-header
                         padding-top: 6% 
                         +text($text,$text-color,1.5vw,500)
                         text-transform: uppercase
@@ -112,7 +110,7 @@ body
                             text-align: center
                             padding-top: 4% 
                             font-size: 2vw
-                    #input-sec
+                    #head-input-sec
                         padding: 5% 0
                         +media(600px)
                             text-align: center
@@ -126,7 +124,6 @@ body
                             -moz-border-radius-bottomleft: 10px
                             border-top-left-radius: 10px
                             border-bottom-left-radius: 10px
-                            webkit-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             +media(768px)
@@ -135,7 +132,7 @@ body
                                 font-size: 2.5vw
                                 width: 40%
                                 padding: 1.5% 0 1.5% 1.5%
-                        #subscribe
+                        #head-subscribe
                             +text($text,white,1vw,600)
                             text-decoration: none
                             background-color: $action
@@ -148,7 +145,6 @@ body
                             -moz-border-radius-bottomright: 10px
                             border-top-right-radius: 10px
                             border-bottom-right-radius: 10px
-                            webkit-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             transition: 0.2s ease-in-out
@@ -164,7 +160,7 @@ body
                                 margin-left: -2%    
                             &:hover
                                 background-color: $hovered 
-                    #promo
+                    #head-promo
                         +text($text,$text-color,.9vw,400)  
                         +media(600px)
                                 font-size: 2vw
@@ -187,13 +183,13 @@ body
                 +media(600px)
                     width: 100%
                     padding: 4.4% 0
-                #info
+                #facts
                     +text($text,$text-color,1.2vw,300) 
                     +media(768px)
                         font-size: 1.4vw
                     +media(600px)
                         font-size: 3vw
-                #sub-header
+                #bottom-sub-header
                     +text($text,$text-color,1.7vw,700)
                     text-transform: uppercase 
                     padding: 6% 0 5%
@@ -226,7 +222,6 @@ body
                     padding: 2.5% 6% 
                     border-radius: 20px
                     transition: 0.2s ease-in-out
-                    webkit-box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
                     -moz-box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
                     box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
                     +media(600px)
@@ -244,7 +239,7 @@ body
                     background-color: $bg-food1
                     opacity: .9
                     height: 100%
-                    #container
+                    #container-1
                         text-align: center
                         padding-top: 8% 
                         +media(768px)
@@ -256,7 +251,6 @@ body
                             +media(600px)
                                 width: 50%
                                 padding-top: 0
-
             .p2
                 width: 25%
                 background-image: url($dry-food)
@@ -267,7 +261,7 @@ body
                     background-color: $bg-food2
                     opacity: .9
                     height: 100%
-                    #container
+                    #container-2
                         text-align: center
                         img
                             width: 80%
@@ -287,7 +281,7 @@ body
                     background-color: $bg-food3
                     opacity: .9
                     height: 100%
-                    #container
+                    #container-3
                         text-align: center
                         padding-top: 8%
                         +media(768px)
@@ -334,12 +328,12 @@ body
                     +media(600px)
                         padding: 0
                         +center(70%, 0 auto)
-                    #header
+                    #header-2
                         +text($text,$text-color,3vw,300) 
                         +media(600px)
                             text-align: center
                             font-size: 4.5vw
-                    #info
+                    #info-A
                         +text($text,$text-color,1.2vw,300)
                         padding: 6% 0 20%
                         line-height: 1.5
@@ -364,33 +358,46 @@ body
             flex-direction: row
             width: 100%
             margin-top: 0.5%
+            +media(600px)
+                flex-direction: column
             .left
                 width: 50%
                 margin-right: 0.25%
                 background-image: url($face-bg)
                 background-size: 100% 100%
+                +media(600px)
+                    +center(100%, 0 auto)
                 .left-bg
                     background-color: rgba(240, 245, 249, .9)
-                    #info
+                    #info-B
                         +text($text,$text-color,1.5vw,400)
                         +center(60%, 0 auto)
                         padding-top: 20%
                         line-height: 1.5
+                        +media(600px)
+                           padding-top: 10%
+                           font-size: 3vw 
                     .title-sec
                         display: flex
                         flex-direction: row
                         img
                             width: 30%
-                        #for
+                        #puppys
                             +text($sub-header,$action,1.5vw,700)
                             text-transform: uppercase
                             padding: 14% 0 0 5%
+                            +media(600px)
+                               font-size: 3vw 
+                               padding-top: 13%
             .right 
                 width: 50%
                 margin-left: 0.25%
                 background-color: $bg-pet
                 background-image: url($face-bg)
                 background-size: 100% 100%
+                +media(600px)
+                    +center(100%, 0 auto)
+                    margin-top: 0.5%
                 .right-bg
                     background-color: rgba(240, 245, 249, .9)
                     .title-sec
@@ -398,27 +405,39 @@ body
                         flex-direction: row-reverse
                         img
                             width: 30%
-                        #for
+                        #dogs
                             +text($sub-header,$bg-food2,1.5vw,700)
                             text-transform: uppercase
                             padding-top: 14% 
                             margin-right: 30%
-                    #info
+                            +media(600px)
+                               font-size: 3vw 
+                               margin-right: 13%
+                    #info-C
                         +text($text,$text-color,1.5vw,400)
                         +center(60%, 0 auto)
                         padding-bottom: 16%
                         line-height: 1.5
+                        +media(600px)
+                           padding-bottom: 8%
+                           font-size: 3vw 
     footer
         text-align: center
         padding-top: 8%
         #opening
             +text($text,black,2.6vw,700)
             text-transform: uppercase
+            +media(600px)
+                font-size: 5vw 
         #off
             +text($text,$text-color,1.2vw,500)
             text-transform: uppercase
             padding: 2% 0
-        #input-sec
+            +media(600px)
+                font-size: 2.5vw 
+        #foot-input-sec
+            +media(600px)
+                padding: 3% 0 1%
             input   
                 padding: .8% 0 .8% .5%
                 width: 20%
@@ -429,7 +448,11 @@ body
                 -moz-border-radius-bottomleft: 10px
                 border-top-left-radius: 10px
                 border-bottom-left-radius: 10px
-            #subscribe
+                +media(600px)
+                    font-size: 3vw 
+                    width: 40%
+                    padding: 1.5% 0 1.5% .5%
+            #foot-subscribe
                 +text($text,white,1.2vw,600)
                 text-decoration: none
                 background-color: $action
@@ -445,40 +468,72 @@ body
                 transition: 0.2s ease-in-out
                 +media(768px)
                     margin-left: -.6%
+                +media(600px)
+                    margin-left: -1.2%
+                    font-size: 2vw
+                    padding: 2.8% 1.5% 2%
                 &:hover
                     background-color: $hovered 
-        #promo
+        #foot-promo
             +text($text,$text-color,.9vw,400)
             padding: 2% 0
+            +media(600px)
+                font-size: 1.5vw
         #foot
             +center(90%, 0 auto)
             display: flex
             flex-direction: row
             justify-content: space-between
             padding-top: 2.5%
+            +media(600px)
+                flex-direction: column
+                justify-content: center
+                padding-bottom: 8%
             .left
                 width: 40%
                 padding-top: 5%
+                +media(600px)
+                    order: 3
+                    +center(100% , 0 auto)
                 #copy-rights
                     +text($text,$text-color,1vw,400)
                     text-align: left
+                    +media(600px)
+                        text-align: center
+                        font-size: 2vw
                     a
                         color: $text-color
                         margin: 0 2%
             .mid
                 width: 20%
-                //margin-right: 13%
+                +media(600px)
+                    order: 1
+                    text-align: center
+                    +center(100%, 0 auto)
                 img
                     width: 50%
+                    +media(600px)
+                        width: 24%
             .right
                 width: 40%
                 text-align: right
                 padding-top: 5%
+                +media(600px)
+                    order: 2
+                    +center(100%, 0 auto)
+                    text-align: center 
+                    padding: 0
                 a
                     +text($text,$text-color, 1vw,400)
-                #icon
+                    +media(600px)
+                        font-size: 2vw
+                #icon1, #icon2
                     margin: 0 5%
                     font-size: 1.4vw
+                    +media(600px)
+                        font-size: 3vw
                 #iconL
                     margin-left: 5%
                     font-size: 1.4vw
+                    +media(600px)
+                        font-size: 3vw

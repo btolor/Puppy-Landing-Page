@@ -26,7 +26,7 @@ body .top-section .container .left {
   }
 }
 body .top-section .container .left .img-bg {
-  background-image: url("../images/confettiB.png");
+  background-image: url("https://i.postimg.cc/WzQkQ9qF/confetti-B.png");
   background-size: 100% 100%;
 }
 body .top-section .container .left .img-bg .img-sec {
@@ -120,10 +120,12 @@ body .top-section .container .right .container #top-sub-header {
 }
 body .top-section .container .right .container #head-input-sec {
   padding: 5% 0;
+  display: flex;
+  flex-direction: row;
 }
 @media screen and (max-width: 600px) {
   body .top-section .container .right .container #head-input-sec {
-    text-align: center;
+    justify-content: center;
   }
 }
 body .top-section .container .right .container #head-input-sec input {
@@ -155,14 +157,15 @@ body .top-section .container .right .container #head-input-sec input {
   }
 }
 body .top-section .container .right .container #head-input-sec #head-subscribe {
+  width: 25%;
   font-family: "Roboto", sans-serif;
   color: white;
   font-size: 1vw;
   font-weight: 600;
   text-decoration: none;
   background-color: #ff5722;
-  padding: 2.8% 2.8% 3%;
-  margin-left: -1.5%;
+  padding: 3% 0;
+  margin-top: -0.2%;
   text-transform: uppercase;
   -webkit-border-top-right-radius: 10px;
   -webkit-border-bottom-right-radius: 10px;
@@ -170,6 +173,12 @@ body .top-section .container .right .container #head-input-sec #head-subscribe {
   -moz-border-radius-bottomright: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   -moz-box-shadow: 0px 3px 18px -4px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 3px 18px -4px rgba(0, 0, 0, 0.75);
   transition: 0.2s ease-in-out;
@@ -177,12 +186,13 @@ body .top-section .container .right .container #head-input-sec #head-subscribe {
 @media screen and (max-width: 1024px) {
   body .top-section .container .right .container #head-input-sec #head-subscribe {
     padding: 3% 2.8% 3%;
+    margin: -0.3% 0 0 -0.5%;
   }
 }
 @media screen and (max-width: 768px) {
   body .top-section .container .right .container #head-input-sec #head-subscribe {
     padding: 2.8% 2.8% 3.2%;
-    font-size: 1.5vw;
+    font-size: 1vw;
     margin-left: -2%;
   }
 }
@@ -190,7 +200,8 @@ body .top-section .container .right .container #head-input-sec #head-subscribe {
   body .top-section .container .right .container #head-input-sec #head-subscribe {
     padding: 1.8% 2.8% 1.8%;
     font-size: 2.5vw;
-    margin-left: -2%;
+    margin-left: -0.2%;
+    width: 25%;
   }
 }
 body .top-section .container .right .container #head-input-sec #head-subscribe:hover {
@@ -331,7 +342,7 @@ body .mid-section .top .info #btn:hover {
 }
 body .mid-section .top .p1 {
   width: 25%;
-  background-image: url("../images/food-bg1.png");
+  background-image: url("https://i.postimg.cc/hGq0JGjz/food-bg1.png");
   background-size: 100% 100%;
 }
 @media screen and (max-width: 600px) {
@@ -369,7 +380,7 @@ body .mid-section .top .p1 .texture #container-1 img {
 }
 body .mid-section .top .p2 {
   width: 25%;
-  background-image: url("../images/food-bg2.png");
+  background-image: url("https://i.postimg.cc/N04R57SS/food-bg2.png");
   background-size: 100% 100%;
 }
 @media screen and (max-width: 600px) {
@@ -402,7 +413,7 @@ body .mid-section .top .p2 .texture #container-2 img {
 }
 body .mid-section .top .p3 {
   width: 25%;
-  background-image: url("../images/paw-bg.png");
+  background-image: url("https://i.postimg.cc/Gh8PqDTT/paw-bg.png");
   background-size: 100% 100%;
 }
 @media screen and (max-width: 600px) {
@@ -535,7 +546,7 @@ body .mid-section .mid .left .content #info-A {
 }
 body .mid-section .mid .right {
   width: 60%;
-  background-image: url("../images/confettiB.png");
+  background-image: url("https://i.postimg.cc/WzQkQ9qF/confetti-B.png");
   background-size: 100% 100%;
   text-align: center;
 }
@@ -563,7 +574,7 @@ body .mid-section .bottom {
 body .mid-section .bottom .left {
   width: 50%;
   margin-right: 0.25%;
-  background-image: url("../images/face-bg.png");
+  background-image: url("https://i.postimg.cc/mkqYTLJr/face-bg.png");
   background-size: 100% 100%;
 }
 @media screen and (max-width: 600px) {
@@ -616,7 +627,7 @@ body .mid-section .bottom .right {
   width: 50%;
   margin-left: 0.25%;
   background-color: #f0f5f9;
-  background-image: url("../images/face-bg.png");
+  background-image: url("https://i.postimg.cc/mkqYTLJr/face-bg.png");
   background-size: 100% 100%;
 }
 @media screen and (max-width: 600px) {
@@ -658,7 +669,7 @@ body .mid-section .bottom .right .right-bg #info-C {
   font-weight: 400;
   width: 60%;
   margin: 0 auto;
-  padding-bottom: 16%;
+  padding-bottom: 15%;
   line-height: 1.5;
 }
 @media screen and (max-width: 600px) {
@@ -723,6 +734,7 @@ body footer #foot-input-sec input {
   }
 }
 body footer #foot-input-sec #foot-subscribe {
+  width: 12%;
   font-family: "Roboto", sans-serif;
   color: white;
   font-size: 1.2vw;
@@ -738,18 +750,36 @@ body footer #foot-input-sec #foot-subscribe {
   -moz-border-radius-bottomright: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   transition: 0.2s ease-in-out;
+}
+@media screen and (max-width: 1024px) {
+  body footer #foot-input-sec #foot-subscribe {
+    position: relative;
+    margin-left: -0.5%;
+    padding: 0.9% 1%;
+    top: -0.6vh;
+  }
 }
 @media screen and (max-width: 768px) {
   body footer #foot-input-sec #foot-subscribe {
-    margin-left: -0.6%;
+    margin-left: -0.7%;
+    padding: 1% 1%;
+    top: -0.3vh;
   }
 }
 @media screen and (max-width: 600px) {
   body footer #foot-input-sec #foot-subscribe {
-    margin-left: -1.2%;
-    font-size: 2vw;
-    padding: 2.8% 1.5% 2%;
+    margin-left: -1%;
+    font-size: 2.4vw;
+    padding: 1.9% 1.5%;
+    width: 25%;
+    top: -0.2vh;
   }
 }
 body footer #foot-input-sec #foot-subscribe:hover {

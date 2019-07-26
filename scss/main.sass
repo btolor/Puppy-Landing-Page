@@ -12,12 +12,12 @@ $bg-food2: #91D0D8
 $bg-food3: #9B99DB
 
 //Background-Image Variables...
-$confetti: '../images/confettiB.png'
-$puppyB: '../images/puppy2.png'
-$paw-print1: '../images/food-bg1.png'
-$paw-print2: '../images/paw-bg.png'
-$dry-food: '../images/food-bg2.png'
-$face-bg: '../images/face-bg.png'
+$confetti: 'https://i.postimg.cc/WzQkQ9qF/confetti-B.png'
+$puppyB: 'https://i.postimg.cc/tTvPzRXz/puppy2.png'
+$paw-print1: 'https://i.postimg.cc/hGq0JGjz/food-bg1.png'
+$paw-print2: 'https://i.postimg.cc/Gh8PqDTT/paw-bg.png'
+$dry-food: 'https://i.postimg.cc/N04R57SS/food-bg2.png'
+$face-bg: 'https://i.postimg.cc/mkqYTLJr/face-bg.png'
 
 //MIXINS...
 // Media Queries Mixin...
@@ -34,6 +34,10 @@ $face-bg: '../images/face-bg.png'
     color: $color
     font-size: $size
     font-weight: $weight
+
+=flex($flex,$direc)
+    display: $flex
+    flex-direction: $direc
 
 
 
@@ -112,8 +116,9 @@ body
                             font-size: 2vw
                     #head-input-sec
                         padding: 5% 0
+                        +flex(flex,row)
                         +media(600px)
-                            text-align: center
+                            justify-content: center
                         input   
                             padding: 2.5% 0 2.5% 1.5%
                             width: 50%
@@ -133,11 +138,12 @@ body
                                 width: 40%
                                 padding: 1.5% 0 1.5% 1.5%
                         #head-subscribe
+                            width: 25%
                             +text($text,white,1vw,600)
                             text-decoration: none
                             background-color: $action
-                            padding: 2.8% 2.8% 3% 
-                            margin-left: -1.5%
+                            padding: 3% 0 
+                            margin-top: -.2%
                             text-transform: uppercase
                             -webkit-border-top-right-radius: 10px
                             -webkit-border-bottom-right-radius: 10px
@@ -145,19 +151,27 @@ body
                             -moz-border-radius-bottomright: 10px
                             border-top-right-radius: 10px
                             border-bottom-right-radius: 10px
+                            -webkit-border-top-left-radius: 0
+                            -webkit-border-bottom-left-radius: 0
+                            -moz-border-radius-topleft: 0
+                            -moz-border-radius-bottomleft: 0
+                            border-top-left-radius: 0
+                            border-bottom-left-radius: 0
                             -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             transition: 0.2s ease-in-out
                             +media(1024px)
                                 padding: 3% 2.8% 3% 
+                                margin: -.3% 0 0 -.5%
                             +media(768px)
                                 padding: 2.8% 2.8% 3.2% 
-                                font-size: 1.5vw
+                                font-size: 1vw
                                 margin-left: -2%
                             +media(600px)
                                 padding: 1.8% 2.8% 1.8% 
                                 font-size: 2.5vw
-                                margin-left: -2%    
+                                margin-left: -.2%
+                                width: 25%    
                             &:hover
                                 background-color: $hovered 
                     #head-promo
@@ -416,7 +430,7 @@ body
                     #info-C
                         +text($text,$text-color,1.5vw,400)
                         +center(60%, 0 auto)
-                        padding-bottom: 16%
+                        padding-bottom: 15%
                         line-height: 1.5
                         +media(600px)
                            padding-bottom: 8%
@@ -453,6 +467,7 @@ body
                     width: 40%
                     padding: 1.5% 0 1.5% .5%
             #foot-subscribe
+                width: 12%
                 +text($text,white,1.2vw,600)
                 text-decoration: none
                 background-color: $action
@@ -465,13 +480,28 @@ body
                 -moz-border-radius-bottomright: 10px
                 border-top-right-radius: 10px
                 border-bottom-right-radius: 10px
+                -webkit-border-top-left-radius: 0
+                -webkit-border-bottom-left-radius: 0
+                -moz-border-radius-topleft: 0
+                -moz-border-radius-bottomleft: 0
+                border-top-left-radius: 0
+                border-bottom-left-radius: 0
                 transition: 0.2s ease-in-out
+                +media(1024px)
+                    position: relative
+                    margin-left: -0.5%
+                    padding: 0.9% 1%
+                    top: -.6vh
                 +media(768px)
-                    margin-left: -.6%
+                    margin-left: -.7%
+                    padding: 1% 1%
+                    top: -.3vh
                 +media(600px)
-                    margin-left: -1.2%
-                    font-size: 2vw
-                    padding: 2.8% 1.5% 2%
+                    margin-left: -1%
+                    font-size: 2.4vw
+                    padding: 1.9% 1.5%
+                    width: 25%
+                    top: -.2vh 
                 &:hover
                     background-color: $hovered 
         #foot-promo

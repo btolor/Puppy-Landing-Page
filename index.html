@@ -14,6 +14,133 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/main.css">
         <!-- Javascript -->
+        <script type="text/javascript">
+            /**The formValidation function uses multiple functions to test the user's input
+             * against an email regex script and execute an alert message when a form is
+             * successfully submitted. The function also has event listeners tow validate
+             * the input fields fo two diifferent forms and form submit POST actions... 
+             **/
+            function formValidation(){
+                //Sets the emailValidator variable to a regex pattern...
+                var emailValidator = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                /**The check_email fucntion takes two parameters 
+                 * to test the input of a dom element's form email 
+                 * field and test its value against a regex pattern.
+                 * If input field is invalid the email error message
+                 * is displayed and if the input is valid the messages 
+                 * is removed...
+                 **/
+                function check_email(email_input, email_error){
+                    //Intializes the email variable to store the html dom element
+                    var email = document.getElementById(email_input);
+                    //If-Else statement to test the validility of the email input feild...
+                    //If valid...
+                    if(emailValidator.test(email.value) && email != ""){
+                        //Changes the css style of the parameter's dom element...
+                        document.getElementById(email_error).style.display = "none";
+                        //Console message...
+                        console.log("Email Valid!")
+                        //Return value...
+                        return true;
+                    //If invalid... 
+                    }else if(!emailValidator.test(email) | email == null){
+                        //Changes the css style of the parameter's dom element...
+                        document.getElementById(email_error).style.display = "block";
+                        //Console message...
+                        console.log("Invalid Email!")
+                        //Return value...
+                        return false;
+                    }
+                }
+
+                /**The submit_email fucntion takes two parameters 
+                 * to test the input of a dom element's form email 
+                 * field and test its value against a regex pattern.
+                 * An if statement to test the return value of the 
+                 * check_email function and either display an error
+                 * message or display a submit confirmation alert-msg
+                 * and reset the email input field's value...
+                 **/
+                function submit_email(email_input, email_error){
+                    //Intializes the email variable to store the html dom element
+                    var email = document.getElementById(email_input);
+                    //If-Else statement to test the return value of the check_email function...
+                    //If valid...
+                    if(check_email(email_input, email_error)){
+                        //Console message...
+                        console.log("Email Valid!")
+                        //Submit confirm alert-msg...
+                        alert('Thank you for subscribing to the PUPPY community.\n A comfirmation email was sent to ' + email.value)
+                        //Resets the html email input field's value...
+                        document.getElementById(email_input).value = "";
+                    //If Invalid...
+                    }else {
+                        //Console message...
+                        console.log("Invalid Email!")
+                    }
+                }
+
+                /**A change event listener for the dom element with an id of top_input to 
+                 * test its value and if valid call the check_email function...
+                 **/
+                document.getElementById("top_input").addEventListener("change",function(){
+                    //Console message...
+                    console.log("Input Checked!")
+                    //If statement to test the value of the dom element with the id of top_input...
+                    if(document.getElementById("top_input").value != null){
+                        //Calls the check_email function with the dom elements with id's of top_input and top_email_error...
+                        check_email("top_input","top_email_error")
+                    }
+                })
+
+                /**A click event listener for the dom element with an id of head-input-sec to 
+                 * test its value and if valid call the submit_email function. The preventDefault
+                 * function is also called to prevent the form from posting and reloading the page...
+                 **/
+                document.getElementById('head-input-sec').addEventListener('click', function(event){
+                    //Console message...
+                    console.log("Form Submitted!")
+                    //If statement to test the value of the dom element with the id of top_input...
+                    if(document.getElementById("top_input").value != null){
+                        //Calls the submit_email function with the dom elements with id's of top_input and top_email_error...
+                        submit_email("top_input","top_email_error")
+                    }
+                    //Calls the preventDefault function to stop the form from posting and reloading the page...
+                    event.preventDefault()
+                })
+
+                /**A change event listener for the dom element with an id of btm-input to 
+                 * test its value and if valid call the check_email function...
+                 **/
+                document.getElementById("btm-input").addEventListener("change",function(){
+                    //Console message...
+                    console.log("Bottom Input Checked!")
+                    //If statement to test the value of the dom element with the id of btm-input...
+                    if(document.getElementById("btm-input").value != null){
+                        //Calls the check_email function with the dom elements with id's of btm-input and btm-email-error...
+                        check_email("btm-input","btm-email-error")
+                    }
+                })
+
+                /**A click event listener for the dom element with an id of footer-form to 
+                 * test its value and if valid call the submit_email function. The preventDefault
+                 * function is also called to prevent the form from posting and reloading the page...
+                 **/
+                document.getElementById('footer-form').addEventListener('click', function(event){
+                    //Console message...
+                    console.log("Footer Form Submitted!")
+                     //If statement to test the value of the dom element with the id of btm-input...
+                    if(document.getElementById("btm-input").value != null){
+                        //Calls the submit_email function with the dom elements with id's of btm-input and btm-email-error...
+                        submit_email("btm-input","btm-email-error")
+                    }
+                    //Calls the preventDefault function to stop the form from posting and reloading the page...
+                    event.preventDefault()
+                })
+            }
+            //Loads the formValidation function after the window's elements and files have loaded...
+            window.onload = formValidation;
+        </script>
     </head>
     <body>
         <!-- Start of top section -->
@@ -25,8 +152,6 @@
                 <!-- Start of left -->
                 <div class="left">
 
-                    
-                    
                     <div class="img-bg">
                         <div class="img-sec">
                             <img src="https://i.postimg.cc/Xv3wjDH9/puppy1.png" alt="Cute Puppy">
@@ -47,15 +172,17 @@
 
                         <h3 id="top-sub-header">get 20% off at grand opening</h3>
 
-                        <!-- Start of input-sec -->
-                        <div id="head-input-sec">
-
-                            <input type="text" placeholder="Enter your email address">
-                            <!-- <a href="#" id="head-subscribe">subcribe now</a> -->
-                            <input type="button" id="head-subscribe" value="subscribe now">
-
-                        </div>
-                        <!-- End of input-sec -->
+                        <!-- Start of top-form -->
+                        <form action="*" method="POST" id="top-form">
+                            <!-- Start of input-sec -->
+                            <div id="head-input-sec">
+                                <input type="email" placeholder="Enter your email address" id="top_input" required>
+                                <input type="button" id="head-subscribe" value="subscribe now">
+                            </div>
+                            <!-- End of input-sec -->
+                            <span id="top_email_error">* Please Enter a Valid Email.</span>
+                        </form>
+                        <!-- End of top-form -->
 
                         <p id="head-promo">Once you're subscribed you get an email with a promocode <br>on your first purchase of any product in Puppy shop</p>
                        
@@ -84,7 +211,7 @@
                     <h1 id="bottom-sub-header">from their point of view</h1>
                     <p id="info2">Natural pet food for dogs that respect their nature.</p>
                     <p id="info3">Check products on amazon</p>
-                    <a href="#" id="btn"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    <a href="https://www.amazon.com/s?k=puppy&ref=nb_sb_noss_2" id="btn"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
 
                 </div>
                 <!-- End of info -->
@@ -256,15 +383,53 @@
             <h2 id="opening">we're opening soon</h2>  
             <h3 id="off">get 20% off at grand opening</h3>
             
-            <!-- Start of input-sec -->
-            <div id="foot-input-sec">
+            <!-- Start of footer-form -->
+            <form action="*" method="POST" id="footer-form">
+                <!-- Start of input-sec -->
+                <div id="foot-input-sec">
+                    <input type="email" placeholder="Enter your email address" id="btm-input" required>
+                    <input type="button" id="foot-subscribe" value="subscribe now">
+                </div>
+                <!-- End of input-sec -->
+                <span id="btm-email-error">* Please Enter a Valid Email Address!</span>
+            </form>
+            <!-- End of footer-form -->
+            <!-- start of footer-form script -->
+            <!-- <script type="text/javascript">
+                function formValidators(){
 
-                <input type="text" placeholder="Enter your email address">
-                <!-- <a id="foot-subscribe" href="#">subcribe now</a> -->
-                <input type="button" id="foot-subscribe" value="subscribe now">
+                    document.getElementById("top_input").addEventListener("change",function(){
+                        console.log("Input Checked!")
+                        if(document.getElementById("top_input").value != null){
+                            check_email("top_input","top_email_error")
+                        }
+                    })
 
-            </div>
-            <!-- End of input-sec -->
+                    document.getElementById('head-input-sec').addEventListener('click', function(event){
+                        console.log("Form Submitted!")
+                        if(document.getElementById("top_input").value != null){
+                            submit_email("top_input","top_email_error")
+                        }
+                        event.preventDefault()
+                    })
+
+                    document.getElementById("btm-input").addEventListener("change",function(){
+                        console.log("Bottom Input Checked!")
+                        if(document.getElementById("btm-input").value != null){
+                            check_email("btm-input","footer-email-error")
+                        }
+                    })
+
+                    document.getElementById('footer-form').addEventListener('click', function(event){
+                        console.log("Footer Form Submitted!")
+                        if(document.getElementById("btm-input").value != null){
+                            submit_email("btm-input","btm-email-error")
+                        }
+                        event.preventDefault()
+                    })
+                }
+            </script> -->
+            <!-- end of footer-form script -->
 
             <p id="foot-promo">Once you're subscribed you get an email with a promocode <br>on your first purchase of any product in Puppy shop</p>
 
@@ -289,9 +454,9 @@
                 <div class="right">
 
                     <a href="#">Contact us</a>
-                    <a href="#" id="icon1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#" id="icon2"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                    <a href="#" id="iconL"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/PuppyFinddotcom" id="icon1"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.facebook.com/PuppyFindDotCom/" id="icon2"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/PuppyFinddotcom/" id="iconL"><i class="fa fa-instagram" aria-hidden="true"></i></a>
 
                 </div>
                 <!-- End of right -->

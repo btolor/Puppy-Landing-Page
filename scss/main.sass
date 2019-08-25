@@ -48,6 +48,7 @@ body
     .top-section
         background-color: $bg-pet
         +center(100%, 0 auto)
+        position: relative
         .container
             display: flex
             flex-direction: row
@@ -75,25 +76,27 @@ body
                                 position: relative
             .right
                 width: 45%
-                padding: 8% 8% 4% 4%
+                padding: 20% 8% 4% 4%
                 +media(600px)
                     width: 100%
-                    padding: 0
+                    padding: 15% 0 0 0
                 .container
                     display: inline
                     img 
-                        width: 20%
-                        position: relative
-                        top: -10vh
-                        right: -70%
+                        width: 10%
+                        position: absolute
+                        top: 60px
+                        right: 150px
                         border-radius: 10px
+                        +media(1024px)
+                            top: 30px
+                            right: 100px
                         +media(768px)
-                            width: 25%
-                            top: -6vh
+                            right: 70px
                         +media(600px)
-                            width: 15%
-                            top: 7vh
-                            right: -75%
+                            width: 16%  
+                            top: 20px
+                            right: 30px  
                     #header-1
                         +text($text,$text-color,2.5vw,300) 
                         width: 75%
@@ -114,68 +117,65 @@ body
                             text-align: center
                             padding-top: 4% 
                             font-size: 2vw
-                    #head-input-sec
-                        padding: 5% 0
-                        +flex(flex,row)
-                        +media(600px)
-                            justify-content: center
-                        input   
-                            padding: 2.5% 0 2.5% 1.5%
-                            width: 50%
-                            +text($text,$text-color,1vw,300)
-                            -webkit-border-top-left-radius: 10px
-                            -webkit-border-bottom-left-radius: 10px
-                            -moz-border-radius-topleft: 10px
-                            -moz-border-radius-bottomleft: 10px
-                            border-top-left-radius: 10px
-                            border-bottom-left-radius: 10px
-                            -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                            box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                            +media(768px)
-                                font-size: 1.4vw
+                    #top-form
+                        padding-bottom: 2%
+                        #head-input-sec
+                            padding: 5% 0 1%
+                            +flex(flex,row)
                             +media(600px)
-                                font-size: 2.5vw
-                                width: 40%
-                                padding: 1.5% 0 1.5% 1.5%
-                        #head-subscribe
-                            width: 25%
-                            +text($text,white,1vw,600)
-                            text-decoration: none
-                            background-color: $action
-                            padding: 3% 0 
-                            margin-top: -.2%
-                            text-transform: uppercase
-                            -webkit-border-top-right-radius: 10px
-                            -webkit-border-bottom-right-radius: 10px
-                            -moz-border-radius-topright: 10px
-                            -moz-border-radius-bottomright: 10px
-                            border-top-right-radius: 10px
-                            border-bottom-right-radius: 10px
-                            -webkit-border-top-left-radius: 0
-                            -webkit-border-bottom-left-radius: 0
-                            -moz-border-radius-topleft: 0
-                            -moz-border-radius-bottomleft: 0
-                            border-top-left-radius: 0
-                            border-bottom-left-radius: 0
-                            -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                            box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                            transition: 0.2s ease-in-out
-                            +media(1024px)
-                                padding: 3% 2.8% 3% 
-                                margin: -.3% 0 0 -.5%
+                                justify-content: center
+                            input   
+                                padding: 2% 0  
+                                +text($text,$text-color,1.2vw,300)
+                                padding-left: 1%      
+                                -webkit-border-radius: 5px
+                                -moz-border-radius: 5px
+                                border-radius: 5px
+                                border: 2px solid $text-color
+                                +media(1024px)
+                                    font-size: 1.5vw
+                                +media(768px)
+                                    font-size: 1.6vw
+                                +media(600px)
+                                    font-size: 2.5vw
+                            #top-input:focus
+                                -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                                box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            #head-subscribe
+                                +text($text,$action,1.2vw,600)
+                                margin-left: 1.5%
+                                border: 2px solid $action
+                                text-transform: uppercase
+                                padding-left: 2%
+                                padding-right: 2%
+                                background: transparent
+                                transition: 0.2s ease-in-out
+                                +media(1024px)
+                                    font-size: 1.5vw
+                                +media(768px)
+                                    font-size: 1.6vw
+                                    padding-left: 1%
+                                    padding-right: 1%
+                                +media(600px)
+                                    font-size: 2.5vw
+                                    padding-left: 2%
+                                    padding-right: 2%
+                                &:hover
+                                    background-color: $action
+                                    color: white
+                                    border-color: $hovered
+                        span
+                            color: $action
+                            font-style: italic
+                            display: none
+                            +text($text,$action,1vw,400)
                             +media(768px)
-                                padding: 2.8% 2.8% 3.2% 
-                                font-size: 1vw
-                                margin-left: -2%
+                                font-size: 1.2vw
                             +media(600px)
-                                padding: 1.8% 2.8% 1.8% 
-                                font-size: 2.5vw
-                                margin-left: -.2%
-                                width: 25%    
-                            &:hover
-                                background-color: $hovered 
+                                font-size: 2.2vw  
+                                text-align: center
                     #head-promo
-                        +text($text,$text-color,.9vw,400)  
+                        +text($text,$text-color,1vw,400)  
                         +media(600px)
                                 font-size: 2vw
                                 text-align: center
@@ -449,63 +449,59 @@ body
             padding: 2% 0
             +media(600px)
                 font-size: 2.5vw 
-        #foot-input-sec
-            +media(600px)
-                padding: 3% 0 1%
-            input   
-                padding: .8% 0 .8% .5%
-                width: 20%
-                +text($text,$text-color,1.4vw,300)
-                -webkit-border-top-left-radius: 10px
-                -webkit-border-bottom-left-radius: 10px
-                -moz-border-radius-topleft: 10px
-                -moz-border-radius-bottomleft: 10px
-                border-top-left-radius: 10px
-                border-bottom-left-radius: 10px
-                +media(600px)
-                    font-size: 3vw 
-                    width: 40%
-                    padding: 1.5% 0 1.5% .5%
-            #foot-subscribe
-                width: 12%
-                +text($text,white,1.2vw,600)
-                text-decoration: none
-                background-color: $action
-                padding: 1.13% 1.5% 1.05% 
-                margin-left: -.3%
-                text-transform: uppercase
-                -webkit-border-top-right-radius: 10px
-                -webkit-border-bottom-right-radius: 10px
-                -moz-border-radius-topright: 10px
-                -moz-border-radius-bottomright: 10px
-                border-top-right-radius: 10px
-                border-bottom-right-radius: 10px
-                -webkit-border-top-left-radius: 0
-                -webkit-border-bottom-left-radius: 0
-                -moz-border-radius-topleft: 0
-                -moz-border-radius-bottomleft: 0
-                border-top-left-radius: 0
-                border-bottom-left-radius: 0
-                transition: 0.2s ease-in-out
-                +media(1024px)
-                    position: relative
-                    margin-left: -0.5%
-                    padding: 0.9% 1%
-                    top: -.6vh
+        #footer-form
+            #foot-input-sec
+                padding-bottom: .8%
+                input   
+                    padding: .8% 0  
+                    +text($text,$text-color,1.2vw,300)
+                    padding-left: 1%      
+                    -webkit-border-radius: 5px
+                    -moz-border-radius: 5px
+                    border-radius: 5px
+                    border: 2px solid $text-color
+                    +media(1024px)
+                        font-size: 1.5vw
+                    +media(768px)
+                        font-size: 2vw
+                    +media(600px)
+                        font-size: 3.2vw
+                #btm-input:focus
+                    -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                    box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                #foot-subscribe
+                    +text($text,$action,1.2vw,600)
+                    margin-left: .5%
+                    border: 2px solid $action
+                    text-transform: uppercase
+                    padding-left: 1%
+                    padding-right: 1%
+                    background: transparent
+                    transition: 0.2s ease-in-out
+                    +media(1024px)
+                        font-size: 1.5vw
+                    +media(768px)
+                        font-size: 2vw
+                        padding-left: 1%
+                        padding-right: 1%
+                    +media(600px)
+                        font-size: 3.2vw
+                    &:hover
+                        background-color: $action
+                        color: white
+                        border-color: $hovered
+            span 
+                color: $action
+                font-style: italic
+                display: none
+                +text($text,$action,1.1vw,400)
+                text-align: center
                 +media(768px)
-                    margin-left: -.7%
-                    padding: 1% 1%
-                    top: -.3vh
+                    font-size: 1.6vw
                 +media(600px)
-                    margin-left: -1%
-                    font-size: 2.4vw
-                    padding: 1.9% 1.5%
-                    width: 25%
-                    top: -.2vh 
-                &:hover
-                    background-color: $hovered 
+                    font-size: 2.2vw
         #foot-promo
-            +text($text,$text-color,.9vw,400)
+            +text($text,$text-color,1vw,400)
             padding: 2% 0
             +media(600px)
                 font-size: 1.5vw

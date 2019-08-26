@@ -1,567 +1,1049 @@
-//Font Variables...
-$text: 'Roboto', sans-serif
-$sub-header: 'Syncopate', sans-serif
+/*VARIABLES*/
+//Font...
+$text: 'Open Sans', sans-serif
 
-//Color Variables...
-$text-color: #2d4059
-$action: #ff5722
-$hovered: #e63600
-$bg-pet: #f0f5f9
-$bg-food1: #F7D797
-$bg-food2: #91D0D8
-$bg-food3: #9B99DB
+//Colors...
+$green: #1C6B1C  
+$green-action: #103d10
+$green-Olay: rgba(5,35,5,.7)
+$yellow: #E8FE15 
+$yellow-action: #899801
+$d-text: #262626
+$w-text: #ffffff
 
-//Background-Image Variables...
-$confetti: 'https://i.postimg.cc/WzQkQ9qF/confetti-B.png'
-$puppyB: 'https://i.postimg.cc/tTvPzRXz/puppy2.png'
-$paw-print1: 'https://i.postimg.cc/hGq0JGjz/food-bg1.png'
-$paw-print2: 'https://i.postimg.cc/Gh8PqDTT/paw-bg.png'
-$dry-food: 'https://i.postimg.cc/N04R57SS/food-bg2.png'
-$face-bg: 'https://i.postimg.cc/mkqYTLJr/face-bg.png'
+//Backgrounds...
+$top-bg-img: 'https://i.postimg.cc/brqHtLdW/top-bg-img.jpg'
+$btm-bg-img: 'https://i.postimg.cc/g0wMzM6K/btm-yard.jpg'
+$about-banner: 'https://i.postimg.cc/4xq1tf8k/about-banner.jpg'
+$services-banner: 'https://i.postimg.cc/jd8cxQPj/contact-banner.jpg'
+$contact-banner: 'https://i.postimg.cc/rwKJK0NN/services.jpg'
+$promise-bg: "https://i.postimg.cc/BnYDczwx/promise.jpg"
+$services-page-banner: "https://i.postimg.cc/tJqCcqs7/service-img.jpg"
+$contact-banner-bg: "https://i.postimg.cc/4dT3zbZ6/contact-banner.jpg"
 
-//MIXINS...
+/*MIXINS*/
+//Center
+=center($width, $margin)
+    width: $width
+    margin: $margin
+//Font...
+=font($font,$size,$weight,$color)
+    font-family: $font
+    font-size: $size
+    font-weight: $weight
+    color: $color
+
+//Background-Image...
+=bg-img($img,$size)
+    background-image: url($img)
+    background-size: 100% 100%
+
+//Btn's...
+=btn($dec,$trans,$bg-color,$pad)
+    text-decoration: $dec
+    text-transform: $trans
+    background: $bg-color
+    padding: $pad
+
+//Display Flex...
+=flex($flex,$direction)
+    display: $flex
+    flex-direction: $direction
+
 // Media Queries Mixin...
 =media($screen)
     @media screen and (max-width: $screen)
         @content
-               
-=center($width, $margin)
-    width: $width
-    margin: $margin
-
-=text($text,$color,$size,$weight)
-    font-family: $text
-    color: $color
-    font-size: $size
-    font-weight: $weight
-
-=flex($flex,$direc)
-    display: $flex
-    flex-direction: $direc
+    
 
 
-
-//Puppy Landing Page Styles...
-body
-    background-color: white
-    //top-section
-    .top-section
-        background-color: $bg-pet
-        +center(100%, 0 auto)
-        position: relative
-        .container
-            display: flex
-            flex-direction: row
+/*STYLES*/
+.mobile-menu
+    background-color: rgba(0,0,0,.7)
+    text-align: right
+    text-align: -webkit-right
+    position: fixed
+    right: -100vw
+    transition: 0.3s
+    +center(100%, 0 auto)
+    .menu-container
+        background-color: $yellow
+        +flex(flex,column)
+        width: 25%
+        text-align: left
+        padding: 0 4% 
+        height: 100vh
+        +media(600px)
+            width: 40%
+        a 
+            +font($text,2.5vw,800,$green)
+            text-decoration: none
+            text-transform: uppercase
+            margin-bottom: 5% 
+            transition: 0.3s
             +media(600px)
-                flex-direction: column-reverse          
-            .left
-                width: 55%
-                +media(600px)
-                    width: 100%
-                    position: absolute
-                    top: -4vh
-                .img-bg
-                    background-image: url($confetti)
-                    background-size: 100% 100%
-                    .img-sec
-                        text-align: center
-                        padding-top: 30%
-                        +media(600px)
-                            text-align: center
-                            margin-right: 3%
-                        img 
-                            width: 80%
-                            +media(600px)
-                                width: 50%
-                                position: relative
-            .right
-                width: 45%
-                padding: 20% 8% 4% 4%
-                +media(600px)
-                    width: 100%
-                    padding: 15% 0 0 0
-                .container
-                    display: inline
-                    img 
-                        width: 10%
-                        position: absolute
-                        top: 60px
-                        right: 150px
-                        border-radius: 10px
-                        +media(1024px)
-                            top: 30px
-                            right: 100px
-                        +media(768px)
-                            right: 70px
-                        +media(600px)
-                            width: 16%  
-                            top: 20px
-                            right: 30px  
-                    #header-1
-                        +text($text,$text-color,2.5vw,300) 
-                        width: 75%
-                        +media(768px)
-                            font-size: 3vw
-                            width: 80%
-                        +media(600px)
-                            margin: 0 auto
-                            text-align: center
-                            padding-top: 53%
-                            font-size: 5vw
-                            width: 60%
-                    #top-sub-header
-                        padding-top: 6% 
-                        +text($text,$text-color,1.5vw,500)
-                        text-transform: uppercase
-                        +media(600px)
-                            text-align: center
-                            padding-top: 4% 
-                            font-size: 2vw
-                    #top-form
-                        padding-bottom: 2%
-                        #head-input-sec
-                            padding: 5% 0 1%
-                            +flex(flex,row)
-                            +media(600px)
-                                justify-content: center
-                            input   
-                                padding: 2% 0  
-                                +text($text,$text-color,1.2vw,300)
-                                padding-left: 1%      
-                                -webkit-border-radius: 5px
-                                -moz-border-radius: 5px
-                                border-radius: 5px
-                                border: 2px solid $text-color
-                            #top-input
-                                +media(1024px)
-                                    font-size: 1.5vw
-                                +media(768px)
-                                    font-size: 1.6vw
-                                +media(600px)
-                                    font-size: 2.5vw
-                            #top-input:focus
-                                -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                                box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                            #head-subscribe
-                                +text($text,$action,1.2vw,600)
-                                border: 2px solid $action
-                                text-transform: uppercase
-                                padding-left: 2%
-                                padding-right: 2%
-                                background: transparent
-                                margin-left: 1.5%
-                                width: fit-content
-                                transition: 0.2s ease-in-out
-                                +media(1024px)
-                                    font-size: 1.5vw
-                                +media(768px)
-                                    font-size: 1.6vw
-                                    padding-left: 1%
-                                    padding-right: 1%
-                                +media(600px)
-                                    font-size: 2.5vw
-                                    padding-left: 2%
-                                    padding-right: 2%
-                                &:hover
-                                    background-color: $action
-                                    color: white
-                                    border-color: $hovered
-                        span
-                            color: $action
-                            font-style: italic
-                            display: none
-                            +text($text,$action,1vw,400)
-                            +media(768px)
-                                font-size: 1.2vw
-                            +media(600px)
-                                font-size: 2.2vw  
-                                text-align: center
-                    #head-promo
-                        +text($text,$text-color,1vw,400)  
-                        +media(600px)
-                                font-size: 2vw
-                                text-align: center
-                                padding-bottom: 4%
-    .mid-section
-        +center(100%, 0 auto)
-        margin-top: .5%
-        .top
-            display: flex
-            flex-direction: row
-            +center(100%, 0 auto)
+                font-size: 3.5vw
+                margin-bottom: 10% 
+            &:hover
+                color: $green-action
+                border-left: 3px solid $green-action
+                padding-left: 4%
+        .mobile-selected
+            color: $green-action
+            border-left: 3px solid $green-action
+            padding-left: 4%
+        #close
+            padding: 5% 0 
+            margin: 5% 0 
+            font-weight: 900
             +media(600px)
-                flex-direction: column
-            .info
-                width: 25%
-                text-align: center
-                background-color: $bg-pet
-                padding: 6% 1%
-                +media(600px)
-                    width: 100%
-                    padding: 4.4% 0
-                #facts
-                    +text($text,$text-color,1.2vw,300) 
-                    +media(768px)
-                        font-size: 1.4vw
-                    +media(600px)
-                        font-size: 3vw
-                #bottom-sub-header
-                    +text($text,$text-color,1.7vw,700)
-                    text-transform: uppercase 
-                    padding: 6% 0 5%
-                    +media(768px)
-                        font-size: 1.8vw
-                    +media(600px)
-                        font-size: 4vw
-                        padding: 3% 0 5%
-                #info2
-                    +text($text,$text-color,1vw,300)
-                    +center(60%, 0 auto)
-                    +media(768px)
-                        font-size: 1.2vw
-                    +media(600px)
-                        font-size: 3vw
-                        width: 40%
-                #info3
-                    +text($text,$text-color,1vw,700)
-                    text-transform: uppercase 
-                    padding: 10% 0
-                    +media(768px)
-                        font-size: 1.3vw
-                    +media(600px)
-                        font-size: 3vw
-                        padding: 4% 0 8%
-                #btn
-                    text-decoration: none
-                    color: $text-color
-                    background-color: white
-                    padding: 2.5% 6% 
-                    border-radius: 20px
-                    transition: 0.2s ease-in-out
-                    -moz-box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
-                    box-shadow: 0px 3px 18px -6px rgba(0,0,0,0.75)
-                    +media(600px)
-                       padding: 1.5% 4%  
-                    &:hover
-                        color: $action
-                        border: .5px outset $action
-            .p1
-                width: 25%
-                background-image: url($paw-print1)
-                background-size: 100% 100%
-                +media(600px)
-                    width: 100%
-                .texture
-                    background-color: $bg-food1
-                    opacity: .9
-                    height: 100%
-                    #container-1
-                        text-align: center
-                        padding-top: 8% 
-                        +media(768px)
-                            padding-top: 15%
-                        +media(600px)
-                                padding-top: 0
-                        img
-                            width: 90%
-                            +media(600px)
-                                width: 50%
-                                padding-top: 0
-            .p2
-                width: 25%
-                background-image: url($dry-food)
-                background-size: 100% 100%
-                +media(600px)
-                    width: 100%
-                .texture
-                    background-color: $bg-food2
-                    opacity: .9
-                    height: 100%
-                    #container-2
-                        text-align: center
-                        img
-                            width: 80%
-                            padding: 22% 6%
-                            +media(768px)
-                                padding: 25% 6%
-                            +media(600px)
-                                width: 43%
-                                padding: 7.2% 6%
-            .p3
-                width: 25%
-                background-image: url($paw-print2)
-                background-size: 100% 100%
-                +media(600px)
-                    width: 100%
-                .texture
-                    background-color: $bg-food3
-                    opacity: .9
-                    height: 100%
-                    #container-3
-                        text-align: center
-                        padding-top: 8%
-                        +media(768px)
-                            padding-top: 12%
-                        +media(600px)
-                            padding: 2.2% 0
-                        img
-                            width: 76%
-                            padding: 0 6%
-                            +media(600px)
-                                width: 40%
-        .mid
-            display: flex
-            flex-direction: row
-            background-color: $bg-pet
-            margin-top: .5%
+                margin: 10% 0 
+            &:hover
+                border-left: none
+        #mobile-menu-quote
+            +center(95%, 0 auto)
+            +btn(none,uppercase,$green,5%)
+            color: $yellow
+            text-align: center
+            margin-top: 1vh
             +media(600px)
-                flex-direction: column
-            .left
-                width: 40%
-                +media(600px)
-                    width: 100%
-                .logos
-                    display: flex
-                    flex-direction: row
-                    justify-content: center
-                    padding: 15% 0 6%
-                    +media(768px)
-                        padding-left: 6%
-                    +media(600px)
-                        padding: 0
-                    #petlife
-                        width: 20%
-                        +media(600px)
-                            width: 15%
-                    i
-                        padding: 10%
-                    #puppy
-                        width: 25%
-                        +media(600px)
-                            width: 20%
-                .content
-                    padding: 0 4% 0 18%
-                    +media(600px)
-                        padding: 0
-                        +center(70%, 0 auto)
-                    #header-2
-                        +text($text,$text-color,3vw,300) 
-                        +media(600px)
-                            text-align: center
-                            font-size: 4.5vw
-                    #info-A
-                        +text($text,$text-color,1.2vw,300)
-                        padding: 6% 0 20%
-                        line-height: 1.5
-                        +media(768px)
-                            font-size: 1.4vw
-                        +media(600px)
-                            font-size: 3vw
-                            padding-bottom: 0
-            .right
-                width: 60%
-                background-image: url($confetti)
-                background-size: 100% 100%
-                text-align: center
-                +media(600px)
-                    width: 100%
-                img
-                    width: 90%
-                    height: 70%
-                    margin-top: 20%
-        .bottom
-            display: flex
-            flex-direction: row
-            width: 100%
-            margin-top: 0.5%
-            +media(600px)
-                flex-direction: column
-            .left
-                width: 50%
-                margin-right: 0.25%
-                background-image: url($face-bg)
-                background-size: 100% 100%
-                +media(600px)
-                    +center(100%, 0 auto)
-                .left-bg
-                    background-color: rgba(240, 245, 249, .9)
-                    #info-B
-                        +text($text,$text-color,1.5vw,400)
-                        +center(60%, 0 auto)
-                        padding-top: 20%
-                        line-height: 1.5
-                        +media(600px)
-                           padding-top: 10%
-                           font-size: 3vw 
-                    .title-sec
-                        display: flex
-                        flex-direction: row
-                        img
-                            width: 30%
-                        #puppys
-                            +text($sub-header,$action,1.5vw,700)
-                            text-transform: uppercase
-                            padding: 14% 0 0 5%
-                            +media(600px)
-                               font-size: 3vw 
-                               padding-top: 13%
-            .right 
-                width: 50%
-                margin-left: 0.25%
-                background-color: $bg-pet
-                background-image: url($face-bg)
-                background-size: 100% 100%
-                +media(600px)
-                    +center(100%, 0 auto)
-                    margin-top: 0.5%
-                .right-bg
-                    background-color: rgba(240, 245, 249, .9)
-                    .title-sec
-                        display: flex
-                        flex-direction: row-reverse
-                        img
-                            width: 30%
-                        #dogs
-                            +text($sub-header,$bg-food2,1.5vw,700)
-                            text-transform: uppercase
-                            padding-top: 14% 
-                            margin-right: 30%
-                            +media(600px)
-                               font-size: 3vw 
-                               margin-right: 13%
-                    #info-C
-                        +text($text,$text-color,1.5vw,400)
-                        +center(60%, 0 auto)
-                        padding-bottom: 15%
-                        line-height: 1.5
-                        +media(600px)
-                           padding-bottom: 8%
-                           font-size: 3vw 
-    footer
+                width: 98% !important
+                font-size: 2.9vw
+            &:hover
+                border-left: none
+                background-color: $green-action
+                padding-left: 5%
+#header
+    text-align: center
+    background-color: $yellow
+    +media(1024px)
+        text-align: left
+    +media(600px)
         text-align: center
-        padding-top: 8%
-        #opening
-            +text($text,black,2.6vw,700)
-            text-transform: uppercase
+    #mobile-menu-btn
+        display: none
+        text-align: center
+        width: 4%
+        border: 1px solid $green
+        position: absolute
+        font-size: 2.5vw
+        right: 5%
+        top: 4%
+        padding-top: .5%
+        border: 2px solid $green
+        border-radius: 4px
+        text-decoration: none
+        color: $green
+        +media(1024px)
+            display: block
+        +media(600px)
+            font-size: 5.3vw
+            width: 8%
+        &:hover
+            color: $green-action
+            border-color: $green-action
+    img
+        width: 14%
+        +media(1024px)
+            text-align: left
+            padding-left: 4%
+            width: 15%
+        +media(600px)
+            width: 35%
+    .menu
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        +center(85%, 0 auto)
+        position: relative
+        top: -11vh
+        +media(1024px)
+            display: none
+        .left-menu
+            width: 50%
+            text-align: start
+            a
+                text-decoration: none
+                text-transform: uppercase
+                +font($text,1.3vw,800,$green)
+                margin-right: 5%
+                transition: 0.3s ease-out 
+                &:hover
+                    color: $w-text
+                    border-bottom: 3px solid $green
+                    padding: 2% 0
+                    position: relative
+                    top: .5vh
+            .selected
+                text-decoration: none
+                text-transform: uppercase
+                +font($text,1.3vw,800,$w-text)
+                margin-right: 5%
+                border-bottom: 3px solid $green
+                padding: 2% 0
+                position: relative
+                top: .5vh
+                &:hover
+                    color: $w-text
+                    border-bottom: 3px solid $green
+                    padding: 2% 0
+                    position: relative
+                    top: .5vh
+        .right-menu
+            width: 50%
+            text-align: end
+            #menu-quote
+                text-decoration: none
+                text-transform: uppercase
+                +font($text,1.4vw,800,$yellow)
+                background: $green
+                padding: 3% 4%
+                transition: 0.2s ease-out 
+                &:hover
+                    background: $green-action
+.squeeze-page
+    +bg-img($top-bg-img,100%  100%)
+    #squeeze-bg
+        background-color: rgba(0,0,0,.6)
+        padding: 8% 0
+        .container
+            +center(95%,0 auto)
+            display: flex
+            flex-direction: row 
             +media(600px)
-                font-size: 5vw 
-        #off
-            +text($text,$text-color,1.2vw,500)
-            text-transform: uppercase
-            padding: 2% 0
-            +media(600px)
-                font-size: 2.5vw 
-        #footer-form
-            #foot-input-sec
-                padding-bottom: .8%
-                input   
-                    padding: .8% 0  
-                    +text($text,$text-color,1.2vw,300)
-                    padding-left: 1%      
-                    -webkit-border-radius: 5px
-                    -moz-border-radius: 5px
-                    border-radius: 5px
-                    border: 2px solid $text-color
-                    +media(1024px)
-                        font-size: 1.5vw
-                    +media(768px)
-                        font-size: 2vw
+                flex-direction: column
+            .squeeze-content
+                width: 60%
+                padding-left: 4%
+                padding-top: 3%
+                +media(600px)
+                    +center(90%, 0 auto)
+                    padding-top: 6%
+                #squeeze-slogan
+                    +font($text,5vw,800,$w-text)
+                    line-height: 1.4
+                    padding-bottom: 6%
                     +media(600px)
-                        font-size: 3.2vw
-                #btm-input:focus
-                    -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                    box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                #foot-subscribe
-                    +text($text,$action,1.2vw,600)
-                    margin-left: .5%
-                    border: 2px solid $action
+                        font-size: 10vw
+                        +center(100%, 0 auto)
+                        padding-bottom: 8%
+                    #squeeze-slogan-punctuation
+                        color: $yellow
+                #squeeze-btn
+                    text-decoration: none
                     text-transform: uppercase
-                    padding-left: 1%
-                    padding-right: 1%
-                    background: transparent
-                    transition: 0.2s ease-in-out
+                    +font($text,1.2vw,800,$green)
+                    background: $yellow
+                    padding: 2% 7%
+                    transition: 0.2s ease-out 
                     +media(1024px)
-                        font-size: 1.5vw
+                        font-size: 1.6vw !important
                     +media(768px)
-                        font-size: 2vw
-                        padding-left: 1%
-                        padding-right: 1%
+                        font-size: 2vw !important
                     +media(600px)
-                        font-size: 3.2vw
+                        padding: 4% 30%
+                        font-size: 3vw !important
                     &:hover
-                        background-color: $action
-                        color: white
-                        border-color: $hovered
-            span 
-                color: $action
+                        background: $yellow-action
+                .basic-serv
+                    margin-top: 8%
+                    padding-left: 5%
+                    display: none
+                    +media(600px)
+                        +center(90%, 12% auto)
+                        padding-left: 0
+                    #basics
+                        +font($text,1.8vw,800,$w-text)
+                        padding-bottom: 3%
+                        +media(600px)
+                            font-size: 7vw
+                    p
+                        +font($text,1.4vw,700,$w-text)
+                        margin-bottom: 2.5% 
+                        +media(600px)
+                            font-size: 4vw
+                        span
+                            margin-right: 4%
+                            color: $yellow
+                            font-weight: 900
+            .form
+                width: 40%
+                background: white
+                padding: 6% 0
+                +media(600px)
+                    +center(100%, 0 auto)
+                    margin-top: 15% 
+                form
+                    +center(80%,0 auto)
+                    display: flex
+                    flex-direction: column
+                    #form-header
+                        +font($text,2.5vw,800,$green)
+                        +media(600px)
+                            font-size: 6vw
+                    #form-info
+                        +font($text,1.2vw,600,$d-text)
+                        line-height: 1.9
+                        padding: 4% 0 10%
+                        +media(600px)
+                            font-size: 3vw
+                    input
+                        font-family: $text
+                        font-size: 1.6vw
+                        border-radius: 4px
+                        border: .8px solid $d-text
+                        +center(99%, 0 auto)
+                        margin-top: 3.4%
+                        padding: 1% 0 1% 2%
+                        +media(600px)
+                            font-size: 4vw
+                    span
+                        +font($text,1vw,600,red)
+                        font-style: italic
+                        padding-top: 1%
+                        display: none
+                    a 
+                        text-align: center
+                        +font($text,1.4vw,800,$yellow)
+                        +btn(none,uppercase,$green,2.5% 0)
+                        +center(102%,5% 0)
+                        +media(600px)
+                            font-size: 4vw
+                        &:hover
+                            background-color: $green-action
+                    .squeezed
+                        display: none
+                        #zip-sec
+                            +flex(flex, row)
+                            margin-top: 2.4%
+                            .zip
+                                +flex(flex, column)
+                                width: 50%
+                                #zip
+                                    width: 80%
+                                #zip-error
+                                    text-align: center
+                            .state
+                                +flex(flex, column)
+                                width: 50%
+                                #state
+                                    width: 80%
+                                #state-error
+                                    text-align: center
+                        #submit
+                            +font($text,1.4vw,800,$yellow)
+                            +btn(none,uppercase,$green,2.5% 0)
+                            +center(102%,5% 0)
+                            border-radius: 0
+                            +media(600px)
+                                font-size: 4vw
+                            &:hover
+                                background-color: $green-action
+.care
+    display: none
+    transition: 0.3s
+    padding: 4% 0
+    background-color: $yellow
+    #care-header
+        +font($text,4vw,800,$green)
+        text-align: center
+        +media(600px)
+            font-size: 8vw
+    #care-sub-header
+        +font($text,1.4vw,600,$d-text)
+        text-align: center
+        padding: 2% 0 5%
+        +media(600px)
+            font-size: 2.7vw
+    .services
+        +center(85%,0 auto)
+        +flex(flex,row)
+        justify-content: space-between
+        +media(600px)
+            flex-direction: column
+        .grass-weeds
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #grass-weeds-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #grass-weeds-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+        .mowing
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #mowing-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #mowing-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+        .landscape
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #landscape-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #landscape-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+        .watering
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #watering-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #watering-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+.history
+    display: none
+    transition: 0.3s
+    .container
+        +center(40%,0 auto)
+        padding: 6% 0 12%
+        +media(600px)
+            +center(90%, 0 auto)
+            padding: 8% 0 16%
+        #history-header
+            text-align: center
+            +font($text,3.5vw,800,$green)
+            padding-bottom: 3.7%
+            +media(600px)
+                text-align: left
+                font-size: 8vw
+        #history-infoA
+            +font($text,1.4vw,600,$d-text)
+            line-height: 1.8
+            padding-bottom: 3.7%
+            +media(600px)
+                font-size: 2.7vw
+                line-height: 2
+                padding-bottom: 4.5%
+        #history-infoB
+            +font($text,1.4vw,600,$d-text)
+            line-height: 1.8
+            +media(600px)
+                font-size: 2.7vw
+                line-height: 2
+                padding-bottom: 2%
+        #history-btn
+            +btn(none,uppercase,$green,2.5% 5%)
+            +font($text,1.4vw,800,$yellow)
+            position: relative 
+            top: 8vh
+            +media(600px)
+                padding: 2.5% 32%
+                font-size: 3vw
+            &:hover
+                background-color: $green-action
+.consultation
+    display: none
+    transition: 0.3s
+    +bg-img($btm-bg-img,100% 100%)
+    #consultation-bg
+        background-color: $green-Olay
+        .container
+            text-align: center
+            padding: 8% 0
+            +media(600px)
+                padding: 30% 0
+            #consultation-header
+                +font($text,3.7vw,800,$w-text)
+                +media(600px)
+                    font-size: 7vw
+                span
+                    color: $yellow
+            #consultation-sub-header
+                +font($text,1.4vw,600,$w-text)
+                padding: 3% 0
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 6%
+            #consultation-btn
+                text-align: center
+                +font($text,1.2vw,800,$green)
+                +btn(none,uppercase,$yellow,1% 1.5%)
+                +media(600px)
+                    font-size: 2.7vw
+                    padding: 2% 3%
+                &:hover
+                    background-color: $yellow-action
+.about-page
+    display: none
+    #about-page-top-banner
+        text-align: center
+        +bg-img($about-banner,100% 100%)
+        #about-banner-bg
+            background: $green-Olay
+            background-color: $green-Olay
+            +media(768px)
+                padding: 0 14%
+            +media(500px)
+                padding-top: 6%
+                padding-bottom: 6% 
+            #about-page-top-banner-title
+                +font($text,5vw,800,$w-text)
+                padding: 10% 0
+                +media(1024px)
+                    font-size: 50px
+                +media(500px)
+                    font-size: 36px !important
+                span
+                    color: yellow
+    .about-container
+        +center(68%, 0 auto)
+        +font($text,18px,600,$d-text)
+        padding: 5% 0 3%
+        +media(1024px)
+            width: 80% !important
+        #about-p1
+            line-height: 1.6
+        #about-p2
+            line-height: 1.6
+            padding: 3% 0 
+        .bill
+            +flex(flex,row)
+            padding: 6% 0 10%
+            +media(500px)
+                flex-direction: column
+                padding-top: 10% !important
+            img 
+                border-radius: 100%
+                +media(768px)
+                    width: 45%
+                +media(500px)
+                    +center(70%, 0 auto)
+                    padding-bottom: 6% 
+            #bill-bio
+                padding-left: 5%
+                margin: auto
+                #bill-name
+                    color: $green
+                    font-weight: 800
+                    font-size: 38px
+                    +media(768px)
+                        font-size: 28px !important
+                    +media(500px)
+                        text-align: center
+                        font-size: 32px !important
+                #bill-info
+                    padding-top: 5%
+                    +media(768px)
+                        line-height: 1.4
+                        padding-top: 3%
+                        font-size: 16px
+                    +media(500px)
+                        font-size: 18px !important
+        .shay
+            +flex(flex,row)
+            padding-bottom: 10%
+            +media(500px)
+                flex-direction: column
+            img 
+                border-radius: 100%
+                +media(768px)
+                    width: 45%
+                +media(500px)
+                    +center(70%, 0 auto)
+                    padding-bottom: 6% 
+            #shay-bio
+                padding-left: 5%
+                margin: auto
+                #shay-name
+                    color: $green
+                    font-weight: 800
+                    font-size: 38px
+                    +media(768px)
+                        font-size: 28px !important
+                    +media(500px)
+                        text-align: center
+                        font-size: 32px !important
+                #shay-info
+                    padding-top: 5%
+                    +media(768px)
+                        line-height: 1.4
+                        padding-top: 3%
+                        font-size: 16px
+                    +media(500px)
+                        font-size: 18px !important
+        .garrett
+            +flex(flex,row)
+            padding-bottom: 5%
+            +media(500px)
+                flex-direction: column
+            img 
+                border-radius: 100%
+                +media(768px)
+                    width: 45%
+                +media(500px)
+                    +center(70%, 0 auto)
+                    padding-bottom: 6% 
+            #garrett-bio
+                padding-left: 5%
+                margin: auto
+                #garrett-name
+                    color: $green
+                    font-weight: 800
+                    font-size: 38px
+                    +media(768px)
+                        font-size: 28px !important
+                    +media(500px)
+                        text-align: center
+                        font-size: 32px !important
+                #garrett-info
+                    padding-top: 5%
+                    +media(768px)
+                        line-height: 1.4
+                        padding-top: 3% 
+                        font-size: 16px
+                    +media(500px)
+                    font-size: 18px !important
+    .about-page-btm-banner
+        background: $yellow
+        background-color: $yellow    
+        text-align: center
+        padding: 8% 0
+        +media(500px)
+            padding: 12% 0
+        #about-page-btm-banner-title
+            +font($text,48px,800,$green)
+            padding-bottom: 5%
+            +media(768px)
+                font-size: 42px
+            +media(500px)
+                font-size: 36px
+        #about-page-btm-banner-btn
+            +btn(none,uppercase,$green,1% 2%)
+            +font($text,20px,800,$yellow)
+            transition: 0.2s ease-out 
+            +media(768px)
+                font-size: 18px
+            +media(500px)
+                font-size: 14px
+            &:hover
+                background: $green-action
+.services-page
+    display: none
+    #services-page-top-banner
+        text-align: center
+        +bg-img($services-page-banner,100% 100%)
+        #services-banner-bg
+            background: $green-Olay
+            background-color: $green-Olay
+            +media(768px)
+                padding: 0 14%
+            +media(500px)
+                padding-top: 6%
+                padding-bottom: 6% 
+            #services-page-top-banner-title
+                +font($text,5vw,800,$w-text)
+                padding: 10% 0
+                +media(1024px)
+                    font-size: 50px
+                +media(500px)
+                    font-size: 36px !important
+                span
+                    color: yellow
+    .services-container
+        +center(85%,0 auto)
+        +flex(flex,row)
+        padding: 6% 0 8% 
+        justify-content: space-between
+        +media(600px)
+            flex-direction: column
+        .services-page-grass-weeds
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #services-page-grass-weeds-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #services-page-grass-weeds-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+        .services-page-mowing
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #services-page-mowing-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #services-page-mowing-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+        .services-page-landscape
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #services-page-landscape-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #services-page-landscape-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+        .services-page-watering
+            width: 24%
+            text-align: center
+            padding: 0 1%
+            +media(600px)
+                width: 100%
+            img 
+                width: 30%
+                +media(600px)
+                    width: 25%
+            #services-page-watering-header
+                +font($text,1.8vw,800,$green)
+                padding: 8% 0
+                +media(600px)
+                    font-size: 4vw
+                    padding: 4% 0
+            #services-page-watering-info
+                +font($text,1.4vw,600,$d-text)
+                line-height: 1.8
+                +media(600px)
+                    font-size: 2.7vw
+                    padding-bottom: 14%
+    .services-page-promise
+        +bg-img($promise-bg, 100% 100%)
+        #promise-bg
+            background: $green-Olay
+            background-color: $green-Olay
+            padding: 8% 0
+            +media(600px)
+                padding: 12% 0 !important
+            #promise-container
+                background: $yellow
+                background-color: $yellow
+                +center(40%, 0 auto) 
+                +media(1024px)
+                    +center(60%, 0 auto) 
+                +media(600px)
+                    +center(100%, 0 auto) 
+                #promise-title
+                    text-align: center
+                    padding-top: 6%
+                    +font($text,46px,800,$green)
+                    +media(500px)
+                        font-size: 32px 
+                #promise-info
+                    padding: 4% 8% 8%
+                    +font($text,18px,600,$d-text)
+                    line-height: 1.5
+                    +media(500px)
+                        line-height: 1.3
+    .services-page-btm-banner
+        text-align: center
+        padding: 6% 0
+        +media(500px)
+            padding: 8% 4% !important
+        #services-page-btm-banner-title
+            +font($text,48px,800,$green)
+            padding-bottom: 4%
+            +media(768px)
+                font-size: 32px !important
+        #services-page-btm-banner-btn
+            +btn(none,uppercase,$green,1% 2%)
+            +font($text,20px,800,$yellow)
+            transition: 0.2s ease-out 
+            +media(768px)
+                font-size: 18px
+            +media(500px)
+                font-size: 14px
+            &:hover
+                background: $green-action
+.contact-page
+    display: none
+    #contact-page-top-banner
+        text-align: center
+        +bg-img($contact-banner-bg,100% 100%)
+        #contact-banner-bg
+            background: $green-Olay
+            background-color: $green-Olay
+            +media(768px)
+                padding: 0 14%
+            +media(500px)
+                padding-top: 6%
+                padding-bottom: 6% 
+            #contact-page-top-banner-title
+                +font($text,5vw,800,$w-text)
+                padding: 10% 0
+                +media(1024px)
+                    font-size: 50px
+                +media(500px)
+                    font-size: 36px !important
+                span
+                    color: yellow    
+    #contact-page-form
+        +center(50%,0 auto)
+        +flex(flex, column)
+        padding: 6% 0
+        +media(600px)
+            width: 75% 
+        #contact-page-form-info
+            text-align: center
+            +font($text,18px,600,$d-text)
+            line-height: 2
+            padding-bottom: 6%
+        label
+            padding-bottom: .4%
+            +font($text,20px,400,rgb(76,81,93,1))
+        input, textarea
+            margin-bottom: 1.5%
+            +font($text,19px,400,$d-text)
+            padding: .4% 0 .4% .7%
+            border-radius: 4px
+            border: 1px solid rgb(76,81,93)
+        #contact-page-form-btn
+            border-radius: 0
+            text-transform: uppercase
+            color: $yellow
+            background: $green
+            background-color: $green
+            padding: 2% 0
+            font-size: 22px
+            font-weight: 700
+            transition: .3s
+            margin-top: .5%
+            &:hover
+                background: $green-action
+                background-color: $green-action
+.footer
+    text-align: center
+    background: $green
+    +font($text,1.3vw,500,$w-text)
+    padding: 1% 0
+    +media(600px)
+        font-size: 3vw
+        padding: 2% 0
+    #media-icons
+        padding: 1.5% 0
+        a
+            text-decoration: none
+            color: $w-text
+            font-size: 2vw
+            margin: 0 1.5%
+            transition: 0.2s ease-in-out
+            +media(1024px)
+                font-size: 3vw
+            +media(600px)
+                font-size: 4vw
+                margin: 0 3%
+            &:hover
+                color: $yellow
+    #copy-rights
+        +media(1024px)
+                font-size: 1.6vw
+        +media(600px)
+            font-size: 2vw
+.quote-pop-up
+    background: rgba(0, 0, 0, .7)
+    background-color: rgba(0, 0, 0, .7)
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    display: none
+    justify-content: center
+    align-items: center
+    transition: 0.3s
+    .quote
+        background: white
+        background-color: white
+        width: 50%
+        padding: 8% 6% 5%
+        position: relative
+        +media(600px)
+            width: 85%
+            padding: 12% 8% 8%
+        #quote-close-btn
+            text-decoration: none
+            color: $green-Olay
+            font-size: 3vw
+            transition: 0.3s
+            position: absolute
+            top: 20px 
+            right: 20px
+            &:hover
+                color: $yellow
+            +media(600px)
+                font-size: 5vw
+        #quote-title
+            text-align: center
+            +font($text,3.6vw,800,$green)
+            +media(600px)
+                font-size: 5.9vw
+        #quote-mesg
+            text-align: center
+            +font($text,1.6vw,500,black)
+            padding: 5% 0 6%
+            +media(600px)
+                font-size: 2.9vw
+        #quote-form
+            +flex(flex,column)
+            input
+                margin: 1% 0
+                +font($text,1.6vw,500,$d-text)
+                padding: .4% 0 .4% .7%
+                border-radius: 4px
+                border: 1px solid rgb(76,81,93)
+                +media(600px)
+                    font-size: 2.9vw
+            #quote-form-btn
+                border-radius: 0
+                text-transform: uppercase
+                color: $yellow
+                background: $green
+                background-color: $green
+                padding: 1.8% 0
+                font-size: 1.5vw
+                font-weight: 700
+                transition: .3s
+                margin-top: 1%
+                &:hover
+                    background: $green-action
+                    background-color: $green-action
+                +media(600px)
+                    font-size: 3vw
+            span
+                +font($text,1vw,600,red)
                 font-style: italic
                 display: none
-                +text($text,$action,1.1vw,400)
-                text-align: center
-                +media(768px)
-                    font-size: 1.6vw
-                +media(600px)
-                    font-size: 2.2vw
-        #foot-promo
-            +text($text,$text-color,1vw,400)
-            padding: 2% 0
+.schedule-pop-up
+    background: rgba(0, 0, 0, .7)
+    background-color: rgba(0, 0, 0, .7)
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    display: none
+    justify-content: center
+    align-items: center
+    transition: 0.3s 
+    .schedule-container
+        background: white
+        background-color: white
+        width: 50%
+        padding: 8% 6% 5%
+        position: relative
+        +media(600px)
+            width: 85%
+            padding: 12% 8% 8%
+        #schedule-close-btn
+            text-decoration: none
+            color: $green-Olay
+            font-size: 3vw
+            transition: 0.3s
+            position: absolute
+            top: 20px 
+            right: 20px
+            &:hover
+                color: $yellow
             +media(600px)
-                font-size: 1.5vw
-        #foot
-            +center(90%, 0 auto)
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-            padding-top: 2.5%
+                font-size: 5vw
+        #thankyou-title
+            text-align: center
+            +font($text,3.6vw,800,$green)
             +media(600px)
-                flex-direction: column
-                justify-content: center
-                padding-bottom: 8%
-            .left
-                width: 40%
-                padding-top: 5%
-                +media(600px)
-                    order: 3
-                    +center(100% , 0 auto)
-                #copy-rights
-                    +text($text,$text-color,1vw,400)
-                    text-align: left
-                    +media(600px)
-                        text-align: center
-                        font-size: 2vw
-                    a
-                        color: $text-color
-                        margin: 0 2%
-            .mid
-                width: 20%
-                +media(600px)
-                    order: 1
-                    text-align: center
-                    +center(100%, 0 auto)
-                img
-                    width: 50%
-                    +media(600px)
-                        width: 24%
-            .right
-                width: 40%
-                text-align: right
-                padding-top: 5%
-                +media(600px)
-                    order: 2
-                    +center(100%, 0 auto)
-                    text-align: center 
-                    padding: 0
-                a
-                    +text($text,$text-color, 1vw,400)
-                    +media(600px)
-                        font-size: 2vw
-                #icon1, #icon2
-                    margin: 0 5%
-                    font-size: 1.4vw
-                    +media(600px)
-                        font-size: 3vw
-                #iconL
-                    margin-left: 5%
-                    font-size: 1.4vw
-                    +media(600px)
-                        font-size: 3vw
+                font-size: 5.9vw
+        #thankyou-msg
+            text-align: center
+            +font($text,1.6vw,500,black)
+            padding: 5% 0 6%
+            +media(600px)
+                font-size: 2.9vw
+        #thanks
+            text-align: center
+            +font($text,1.6vw,700,$green)
+            padding: 6% 0 6%
+            +media(600px)
+                font-size: 2.9vw

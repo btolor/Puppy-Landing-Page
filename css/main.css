@@ -150,17 +150,17 @@ body .top-section .container .right .container #top-form #head-input-sec input {
   border: 2px solid #2d4059;
 }
 @media screen and (max-width: 1024px) {
-  body .top-section .container .right .container #top-form #head-input-sec input {
+  body .top-section .container .right .container #top-form #head-input-sec #top-input {
     font-size: 1.5vw;
   }
 }
 @media screen and (max-width: 768px) {
-  body .top-section .container .right .container #top-form #head-input-sec input {
+  body .top-section .container .right .container #top-form #head-input-sec #top-input {
     font-size: 1.6vw;
   }
 }
 @media screen and (max-width: 600px) {
-  body .top-section .container .right .container #top-form #head-input-sec input {
+  body .top-section .container .right .container #top-form #head-input-sec #top-input {
     font-size: 2.5vw;
   }
 }
@@ -173,12 +173,13 @@ body .top-section .container .right .container #top-form #head-input-sec #head-s
   color: #ff5722;
   font-size: 1.2vw;
   font-weight: 600;
-  margin-left: 1.5%;
   border: 2px solid #ff5722;
   text-transform: uppercase;
   padding-left: 2%;
   padding-right: 2%;
   background: transparent;
+  margin-left: 1.5%;
+  width: fit-content;
   transition: 0.2s ease-in-out;
 }
 @media screen and (max-width: 1024px) {

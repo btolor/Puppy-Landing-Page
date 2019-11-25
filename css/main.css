@@ -178,8 +178,18 @@ body .top-section .container .right .container #top-form #head-input-sec {
   }
 }
 
+body .top-section .container .right .container #top-form #head-input-sec input {
+  padding: 2% 0;
+  font-family: "Roboto", sans-serif;
+  color: #2d4059;
+  font-size: 1.2vw;
+  font-weight: 300;
+  padding-left: 1%;
+  border-radius: 5px;
+  border: 2px solid #2d4059;
+}
+
 body .top-section .container .right .container #top-form #head-input-sec #top_input {
-  position: relative;
   width: 40%;
 }
 
@@ -203,9 +213,9 @@ body .top-section .container .right .container #top-form #head-input-sec #top_in
   }
 }
 
-body .top-section .container .right .container #top-form #head-input-sec #top_input label {
-  position: absolute;
-  opacity: 0;
+body .top-section .container .right .container #top-form #head-input-sec #top-input:focus {
+  -webkit-box-shadow: 0px 3px 18px -4px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 3px 18px -4px rgba(0, 0, 0, 0.75);
 }
 
 body .top-section .container .right .container #top-form #head-input-sec #head-subscribe {
@@ -913,7 +923,6 @@ body footer #off {
 
 body footer #footer-form #foot-input-sec {
   padding-bottom: .8%;
-  position: relative;
 }
 
 body footer #footer-form #foot-input-sec input {
@@ -974,7 +983,7 @@ body footer #footer-form #foot-input-sec #btm-input:focus {
 
 body footer #footer-form #foot-input-sec #foot-subscribe {
   font-family: "Roboto", sans-serif;
-  color: #2d4059;
+  color: #ff5722;
   font-size: 1.2vw;
   font-weight: 600;
   margin-left: .5%;

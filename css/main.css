@@ -205,7 +205,7 @@ body .top-section .container .right .container #top-form #head-input-sec #top_in
 
 body .top-section .container .right .container #top-form #head-input-sec #top_input label {
   position: absolute;
-  color: transparent;
+  opacity: 0;
 }
 
 body .top-section .container .right .container #top-form #head-input-sec #head-subscribe {

@@ -124,15 +124,8 @@ body
                             +flex(flex,row)
                             +media(600px)
                                 justify-content: center
-                            input   
-                                padding: 2% 0  
-                                +text($text,$text-color,1.2vw,300)
-                                padding-left: 1%      
-                                -webkit-border-radius: 5px
-                                -moz-border-radius: 5px
-                                border-radius: 5px
-                                border: 2px solid $text-color
                             #top_input
+                                position: relative
                                 width: 40%
                                 +media(1024px)
                                     width: 45%
@@ -142,9 +135,30 @@ body
                                 +media(600px)
                                     width: 30%
                                     font-size: 2.5vw
-                            #top-input:focus
-                                -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
-                                box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                                label
+                                    position: absolute
+                                    color: transparent
+                            // input   
+                            //     padding: 2% 0  
+                            //     +text($text,$text-color,1.2vw,300)
+                            //     padding-left: 1%      
+                            //     -webkit-border-radius: 5px
+                            //     -moz-border-radius: 5px
+                            //     border-radius: 5px
+                            //     border: 2px solid $text-color
+                            // #top_input
+                            //     width: 40%
+                            //     +media(1024px)
+                            //         width: 45%
+                            //         font-size: 1.5vw
+                            //     +media(768px)
+                            //         font-size: 1.6vw
+                            //     +media(600px)
+                            //         width: 30%
+                            //         font-size: 2.5vw
+                            // #top-input:focus
+                            //     -moz-box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
+                            //     box-shadow: 0px 3px 18px -4px rgba(0,0,0,0.75)
                             #head-subscribe
                                 +text($text,$action,1.2vw,600)
                                 border: 2px solid $action
